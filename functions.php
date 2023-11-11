@@ -148,6 +148,13 @@ function silk_scissorz_scripts()
 
 	wp_enqueue_script('silk-scissorz-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 
+	// Enqueue Swiper on the Homepage
+	if (is_front_page()) {
+		wp_enqueue_script('swiper-scripts', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), '11.0.4', array('strategy' => 'defer'));
+		wp_enqueue_script('swiper-configs', get_template_directory_uri() . '/js/swiper-configs.js', array('swiper-scripts'), _S_VERSION, array('strategy' => 'defer'));
+	}
+
+
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
