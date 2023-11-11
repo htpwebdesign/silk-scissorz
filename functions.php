@@ -156,7 +156,7 @@ function silk_scissorz_scripts()
 
 	//Enqueue Dropdown js
 	if (is_page('30')){
-		wp_enqueue_script('dropdown', get_template_directory_uri() . '/js/swiper-bundle.min.js', array('strategy' => 'defer'));
+		wp_enqueue_script('dropdown', get_template_directory_uri() . '/js/dropdown.js',  array('jquery'), _S_VERSION, true);
 	}
 
 

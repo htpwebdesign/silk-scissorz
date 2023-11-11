@@ -36,14 +36,14 @@ get_header();
 
 				if (have_rows('category')) : ?>
 
-					<label for="cars">Choose a car:</label>
-					<select name="cars" id="cars">
+					<label for="category">Choose a category:</label>
+					<select name="categories" id="categories">
 
 						<?php
 						while (have_rows('category')) : the_row();
 							$category_name = get_sub_field('category_name') ?>
 
-							<option><?php echo $category_name ?></option>
+							<option value="<?php echo $category_name?>"><?php echo $category_name ?></option>
 
 						<?php endwhile; ?>
 
@@ -54,7 +54,7 @@ get_header();
 					while (have_rows('category')) : the_row();
 						$category_name = get_sub_field('category_name') ?>
 
-
+						<div class="category-content" id="<?php echo $category_name ?>">
 						<h3><?php echo $category_name; ?></h3>
 
 
@@ -72,11 +72,12 @@ get_header();
 
 									<p><?php echo $question; ?></p>
 									<p><?php echo $answer; ?></p>
-									</div>
+									
 	<?php
 								endwhile;
 							endif;
-						endif;
+						endif;?>
+						</div><?php
 					endwhile;
 				endif;
 
