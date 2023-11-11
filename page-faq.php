@@ -31,45 +31,64 @@ get_header();
 			comments_template();
 		endif;
 
-		<div class="dropdown">
-					<button onclick="myFunction()" class="dropbtn">Dropdown</button>
-					<div id="myDropdown" class="dropdown-content">
+		if (function_exists('get_field')) :
+			if (get_field('category')) :
 
-						<a href="" value="<?php echo $category_name ?>"></a>
+				if (have_rows('category')) : ?>
 
-					</div>
+					<label for="cars">Choose a car:</label>
+					<select name="cars" id="cars">
 
-		if (have_rows('category')) :
-			while (have_rows('category')) : the_row();
-				$category_name = get_sub_field('category_name') ?>
-				
-				</div>
-				<h3><?php echo $category_name; ?></h3>
-				<div>
+						<?php
+						while (have_rows('category')) : the_row();
+							$category_name = get_sub_field('category_name') ?>
 
-					<?php
+							<option><?php echo $category_name ?></option>
 
-					// Loop over sub repeater rows.
-					if (have_rows('faq-qna')) :
-						while (have_rows('faq-qna')) : the_row();
+						<?php endwhile; ?>
 
-							// Get sub value.
-							$question = get_sub_field('faq-questions');
-							$answer = get_sub_field('faq-answers');
-					?>
+					</select>
+
+					<?php endif;
+				if (have_rows('category')) :
+					while (have_rows('category')) : the_row();
+						$category_name = get_sub_field('category_name') ?>
 
 
-							<p><?php echo $question; ?></p>
-							<p><?php echo $answer; ?></p>
-				</div>
-<?php
-						endwhile;
-					endif;
-				endwhile;
+						<h3><?php echo $category_name; ?></h3>
+
+
+						<?php
+						if (get_sub_field('faq-qna')) :
+							// Loop over sub repeater rows.
+							if (have_rows('faq-qna')) :
+								while (have_rows('faq-qna')) : the_row();
+
+									// Get sub value.
+									$question = get_sub_field('faq-questions');
+									$answer = get_sub_field('faq-answers');
+						?>
+
+
+									<p><?php echo $question; ?></p>
+									<p><?php echo $answer; ?></p>
+									</div>
+	<?php
+								endwhile;
+							endif;
+						endif;
+					endwhile;
+				endif;
+
+
+
 			endif;
+		endif;
+	endwhile; // End of the loop. 
+	?>
 
-		endwhile; // End of the loop.
-?>
+
+
 
 </main><!-- #main -->
 
