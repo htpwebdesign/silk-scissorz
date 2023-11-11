@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying home page
  *
@@ -15,24 +16,173 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
+
+	<?php
+	while (have_posts()) : the_post();
+	?>
+		<h1><?php the_title() ?></h1>
 
 		<?php
-		while ( have_posts() ) :
-			the_post();
+		if (function_exists('get_field')) :
 
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
+			/* === Hero Section === */
+			if (get_field('carousel')) :
+				if (have_rows('carousel')) : ?>
+					<section class="carousel">
+						<div class="swiper-hero-section">
+							<div class="swiper-wrapper">
+								<?php
+								while (have_rows('carousel')) : the_row();
+									$sub_image = get_sub_field('carousel_img');
+									$sub_button_text = get_sub_field('button_text');
+									$sub_link = get_sub_field('button_link');
+								?>
+									<div class="swiper-slide">
+										<div>
+											<?php echo wp_get_attachment_image($sub_image, 'full'); ?>
+										</div>
+										<div>
+											<a href="<?php echo esc_url($sub_link); ?>"><?php echo $sub_button_text; ?></a>
+										</div>
+									</div>
+								<?php
+								endwhile; ?>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</section>
+					<?php
+				endif;
 			endif;
+			/* === Hero Section End === */
 
-		endwhile; // End of the loop.
-		?>
+			/* === About Section === */
+			// WP Query	for About Page
+			$args = array(
+				'post_type' => 'page',
+				'pagename' => 'about'
+			);
+			$about_query = new WP_Query($args);
+			if ($about_query->have_posts()) :
+				while ($about_query->have_posts()) : $about_query->the_post();
+					if (get_field('about_us') && get_field('store_image')) :
+						$about_us = get_field('about_us');
+						$about_image = get_field('store_image');
+					?>
+						<section class="about">
+							<h2><?php the_title(); ?></h2>
+							<figure class="about__image">
+								<?php echo wp_get_attachment_image($about_image, 'full'); ?>
+							</figure>
+							<div class="about__content">
+								<p><?php echo esc_html($about_us); ?></p>
+								<a href="<?php the_permalink(); ?>">About us</a>
+							</div>
+						</section>
+				<?php
+					endif;
+				endwhile;
+				wp_reset_postdata();
+			endif;
+			/* === About Section End === */
 
-	</main><!-- #main -->
+
+			/* === Gallery Section === */
+			$featured_posts = get_field('gallery');
+			if ($featured_posts) : ?>
+				<section class="gallery">
+					<?php foreach ($featured_posts as $post) :
+						setup_postdata($post); ?>
+						<a class="gallery__item" href="<?php the_permalink() ?>">
+							<?php the_post_thumbnail('large'); ?>
+						</a>
+					<?php endforeach;
+					wp_reset_postdata(); ?>
+				</section>
+
+			<?php endif;
+			/* === Gallery Section End === */
+
+
+
+			/* === Services Section === */
+			$args = array(
+				'post_type' => 'silk-services',
+				'posts_per_page' => -1,
+				'orderby' => 'title',
+				'order' => 'ASC',
+			);
+			$services_query = new WP_Query($args);
+			if ($services_query->have_posts()) : ?>
+				<section class="services">
+					<h2>Our Services</h2>
+					<?php
+					while ($services_query->have_posts()) : $services_query->the_post();
+					?>
+						<article>
+							<?php the_post_thumbnail('medium'); ?>
+							<h3><?php the_title() ?></h3>
+						</article>
+
+					<?php
+					endwhile;
+					wp_reset_postdata();
+					?>
+					<a href="<?php echo esc_url(get_page_link(24)) ?>">All Services</a>
+				</section>
+			<?php
+			endif;
+			/* === Services Section End === */
+
+			/* === Products Section === */
+			/* === Products Section End === */
+
+
+
+			/* === Testimonials Section === */
+			$args = array(
+				'post_type' => 'silk-testimonials',
+				'posts_per_page' => -1,
+				'orderby' => 'rand',
+			);
+			$testimonials_query = new WP_Query($args);
+			if ($testimonials_query->have_posts()) : ?>
+				<section class="testimonials">
+					<h2>Testimonials</h2>
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<?php
+							while ($testimonials_query->have_posts()) : $testimonials_query->the_post();
+								if (get_field('testimonials_text') && get_field('clients_name')) :
+									$testimonials_text = get_field('testimonials_text');
+									$clients_name = get_field('clients_name');
+							?>
+									<div class="swiper-slide">
+										<blockquote>
+											<p><?php echo esc_html($testimonials_text) ?></p>
+											<cite><?php echo esc_html($clients_name) ?></cite>
+										</blockquote>
+									</div>
+							<?php
+								endif;
+							endwhile;
+							wp_reset_postdata();
+							?>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</section>
+	<?php
+			endif;
+		/* === Testimonials Section End === */
+
+
+		endif;
+	endwhile; // End of the loop.
+	?>
+</main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
