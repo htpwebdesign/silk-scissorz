@@ -17,6 +17,8 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
+	<!-- Dropdown menu -->
+
 
 	<?php
 	while (have_posts()) :
@@ -29,23 +31,45 @@ get_header();
 			comments_template();
 		endif;
 
-		// Check rows exists.
-		if (have_rows('repeater_field_name')) :
+		<div class="dropdown">
+					<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+					<div id="myDropdown" class="dropdown-content">
 
-			// Loop through rows.
-			while (have_rows('repeater_field_name')) : the_row();
+						<a href="" value="<?php echo $category_name ?>"></a>
 
-				// Load sub field value.
-				$sub_value = get_sub_field('sub_field');
-			// Do something...
-			
-			// End loop.
-			endwhile;
-		// Do something...
-		endif;
+					</div>
 
-	endwhile; // End of the loop.
-	?>
+		if (have_rows('category')) :
+			while (have_rows('category')) : the_row();
+				$category_name = get_sub_field('category_name') ?>
+				
+				</div>
+				<h3><?php echo $category_name; ?></h3>
+				<div>
+
+					<?php
+
+					// Loop over sub repeater rows.
+					if (have_rows('faq-qna')) :
+						while (have_rows('faq-qna')) : the_row();
+
+							// Get sub value.
+							$question = get_sub_field('faq-questions');
+							$answer = get_sub_field('faq-answers');
+					?>
+
+
+							<p><?php echo $question; ?></p>
+							<p><?php echo $answer; ?></p>
+				</div>
+<?php
+						endwhile;
+					endif;
+				endwhile;
+			endif;
+
+		endwhile; // End of the loop.
+?>
 
 </main><!-- #main -->
 
