@@ -43,7 +43,7 @@ get_header();
 						while (have_rows('category')) : the_row();
 							$category_name = get_sub_field('category_name') ?>
 
-							<option value="<?php echo $category_name?>"><?php echo $category_name ?></option>
+							<option value="dropdown-<?php echo get_row_index(); ?>"><?php echo $category_name ?></option>
 
 						<?php endwhile; ?>
 
@@ -54,39 +54,39 @@ get_header();
 					while (have_rows('category')) : the_row();
 						$category_name = get_sub_field('category_name') ?>
 
-						<div class="category-content" id="<?php echo $category_name ?>">
-						<h3><?php echo $category_name; ?></h3>
+						<div class="category-content" id="dropdown-<?php echo get_row_index(); ?>">
+							<h2><?php echo $category_name; ?></h2>
 
 
-						<?php
-						if (get_sub_field('faq-qna')) :
-							// Loop over sub repeater rows.
-							if (have_rows('faq-qna')) :
-								while (have_rows('faq-qna')) : the_row();
+							<?php
+							if (get_sub_field('faq-qna')) :
+								// Loop over sub repeater rows.
+								if (have_rows('faq-qna')) :
+									while (have_rows('faq-qna')) : the_row();
 
-									// Get sub value.
-									$question = get_sub_field('faq-questions');
-									$answer = get_sub_field('faq-answers');
-						?>
+										// Get sub value.
+										$question = get_sub_field('faq-questions');
+										$answer = get_sub_field('faq-answers');
+							?>
+										<button class="accordion"><?php echo $question; ?></button>
+										<div class="panel">
+											<p><?php echo $answer; ?></p>
+										</div>
 
-
-									<p><?php echo $question; ?></p>
-									<p><?php echo $answer; ?></p>
-									
-	<?php
-								endwhile;
-							endif;
-						endif;?>
+							<?php
+									endwhile;
+								endif;
+							endif; ?>
 						</div><?php
-					endwhile;
+							endwhile;
+						endif;
+
+
+
+					endif;
 				endif;
-
-
-
-			endif;
-		endif;
-	endwhile; // End of the loop. 
-	?>
+			endwhile; // End of the loop. 
+								?>
 
 
 
