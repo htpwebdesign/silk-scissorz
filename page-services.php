@@ -145,8 +145,8 @@ get_header();
         <div class="service-content">
             <?php
             // Check if the repeater field "Price List" exists and has rows
-            if (have_rows('Price List')) {
-                while (have_rows('Price List')) {
+            if (have_rows('price_list')) {
+                while (have_rows('price_list')) {
                     the_row();
                     // Display content from the repeater subfields
                     $text = get_sub_field('service_name'); // Replace 'text_field' with the actual subfield name
