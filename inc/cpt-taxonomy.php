@@ -79,3 +79,5 @@ function silk_register_custom_post_types()
 }
 
 add_action('init', 'silk_register_custom_post_types');
+
+
