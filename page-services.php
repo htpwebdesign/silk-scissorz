@@ -51,7 +51,8 @@ get_header();
                     $query->the_post();
             ?>
         <div class="service-item">
-            <h3><?php echo esc_html(get_the_title()); ?></h3>
+            <h3 id="<?php echo esc_attr(get_the_ID()); ?>"><?php echo esc_html(get_the_title()); ?></h3>
+
             <table>
                 <thead>
                     <tr>
