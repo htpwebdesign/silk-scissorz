@@ -24,32 +24,32 @@ get_header();
 			<section>
             <?php if( have_rows('contact_info') ): ?>
                 <?php while( have_rows('contact_info') ): the_row(); 
-				$store_address = get_sub_field('store_address');
-				$store_phone = get_sub_field('store_phone');
-				$store_email = get_sub_field('store_email');
-				$store_parking_info = get_sub_field('store_parking_info');
-				$store_location_map = get_sub_field('store_location_map');?>
-
-					<p><?php echo esc_html($store_address); ?></p>
-					<p><?php echo esc_html($store_phone); ?></p>
-					<p><?php echo esc_html($store_email); ?></p>
-					<p><?php echo esc_html($store_parking_info); ?></p>
-                
+					$store_address = get_sub_field('store_address');
+					$store_phone = get_sub_field('store_phone');
+					$store_email = get_sub_field('store_email');
+					$store_parking_info = get_sub_field('store_parking_info');
+					$store_location_map = get_sub_field('store_location_map');?>
+					<!-- Address, Email, Phone Number -->
+					<address>
+						<p><?php echo esc_html($store_address); ?></p>
+						<a href="tel:<?php echo esc_html($store_phone); ?>"><?php echo esc_html($store_phone); ?></a>
+						<br>
+						<a href="mailto:<?php echo esc_html($store_email); ?>"><?php echo esc_html($store_email); ?></a>
+					</address>
+					<!-- Google map -->
                     <div class="map">
-                        <?php echo esc_html($store_location_map); ?>
+                        <?php if ($store_location_map) : ?>
+                            <gmp-map center="<?php echo esc_attr($store_location_map['lat']); ?>,<?php echo esc_attr($store_location_map['lng']); ?>" zoom="14" map-id="DEMO_MAP_ID">
+                                <gmp-advanced-marker position="<?php echo esc_attr($store_location_map['lat']); ?>,<?php echo esc_attr($store_location_map['lng']); ?>" title="My location">
+                                </gmp-advanced-marker>
+                            </gmp-map>
+                        <?php endif; ?>
                     </div>
                 <?php endwhile; ?>
             <?php endif; ?>
         </section>
     <?php endwhile; // end of the loop. ?>
-	<?php
-	function my_acf_google_map_api( $api ){
-		$api['key'] = 'store_location_map';
-		return $api;
-	}
-	add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
-	?>
-
+	
 	</main><!-- #main -->
 
 <?php

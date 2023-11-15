@@ -205,3 +205,9 @@ if (defined('JETPACK__VERSION')) {
 if (class_exists('WooCommerce')) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+// Google map API key
+function my_acf_init() {
+    acf_update_setting('google_api_key', 'AIzaSyCInj0ZDdGNx1jKzTf2vrNoFzcHvvR64WM');
+}
+add_action('acf/init', 'my_acf_init');

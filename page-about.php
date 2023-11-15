@@ -23,9 +23,14 @@ get_header();
 			<h1><?php the_title(); ?></h1>
 			
 			<section>
+				<!-- About us description -->
 				<p><?php echo esc_html($about_us); ?></p>
 				<!-- echo esc_html(get_field('about_us')); -->
-				<?php echo wp_get_attachment_image($store_image, 'full'); ?>
+
+				<!-- Store images -->
+				<figure>
+					<?php echo wp_get_attachment_image($store_image, 'full'); ?>
+				</figure>
 			</section>
 		<?php endwhile; // end of the loop. ?>
 	</main><!-- #main -->
