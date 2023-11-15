@@ -22,7 +22,7 @@
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'silk-scissorz' ), 'silk-scissorz', '<a href="https://silkandscissorz.bcitwebdeveloper.ca/">FWD 34</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'silk-scissorz' ), 'silk-scissorz', '<a href="https://silkandscissorz.bcitwebdeveloper.ca/">FWD 34 - Willy, Kaori, Khushi, Jadie</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
