@@ -61,7 +61,7 @@ get_header();
 			// WP Query	for About Page
 			$args = array(
 				'post_type' => 'page',
-				'pagename' => 'about'
+				'page_id' => 26
 			);
 			$about_query = new WP_Query($args);
 			if ($about_query->have_posts()) :
@@ -134,8 +134,18 @@ get_header();
 			<?php
 			endif;
 			/* === Services Section End === */
+			?>
 
-			/* === Products Section === */
+
+			<section class="products">
+				<a href="<?php echo wc_get_page_permalink('shop') ?>">See All Products</a>
+				<?php
+				/* === Products Section === */
+				echo do_shortcode('[products limit="4" columns="4" orderby="popularity" class="quick-sale" on_sale="true" ]');
+				?>
+			</section>
+			<?php
+
 			/* === Products Section End === */
 
 
@@ -159,10 +169,13 @@ get_header();
 									$clients_name = get_field('clients_name');
 							?>
 									<div class="swiper-slide">
-										<blockquote>
-											<p><?php echo esc_html($testimonials_text) ?></p>
-											<cite><?php echo esc_html($clients_name) ?></cite>
-										</blockquote>
+										<article>
+											<h3><?php the_title(); ?></h3>
+											<blockquote>
+												<p><?php echo esc_html($testimonials_text) ?></p>
+												<cite><?php echo esc_html($clients_name) ?></cite>
+											</blockquote>
+										</article>
 									</div>
 							<?php
 								endif;

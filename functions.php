@@ -51,7 +51,9 @@ function silk_scissorz_setup()
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__('Primary', 'silk-scissorz'),
+			'header' => esc_html__('Header Menu', 'silk-scissorz'),
+			'social-media' => esc_html__('Social Media - Footer Left Side', 'silk-scissorz'),
+			'footer-right' => esc_html__('Footer Quick Link', 'silk-scissorz'),
 		)
 	);
 
@@ -205,3 +207,19 @@ if (defined('JETPACK__VERSION')) {
 if (class_exists('WooCommerce')) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+// Change the Ecerpt Length from 55 to 20
+function silk_excerpt_length($length)
+{
+	return 20;
+}
+add_filter('excerpt_length', 'silk_excerpt_length', 999);
+
+// Modify the end of the excerpt
+function silk_excerpt_more($more)
+{
+	$more = '...<a class"" href="' . esc_url(get_permalink()) . '">Continue Reading</a>';
+	return $more;
+}
+
+add_filter('excerpt_more', 'silk_excerpt_more');
