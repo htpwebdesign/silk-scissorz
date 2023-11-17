@@ -49,6 +49,7 @@ get_header();
         <?php
 				endif;
 
+        
 				/* === Business Hours === */
 				if (have_rows('business_hours')) : ?>
         <table>
