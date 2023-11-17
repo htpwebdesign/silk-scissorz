@@ -24,13 +24,6 @@ get_header();
 	while (have_posts()) :
 		the_post();
 
-		get_template_part('template-parts/content', 'page');
-
-		// If comments are open or we have at least one comment, load up the comment template.
-		if (comments_open() || get_comments_number()) :
-			comments_template();
-		endif;
-
 		if (function_exists('get_field')) :
 			if (get_field('category')) :
 
@@ -38,11 +31,11 @@ get_header();
 
 					<label for="category">Choose a category:</label>
 					<select name="categories" id="categories">
-					<option selected disabled><?php echo "Select an option" ?></option>
+						<option selected disabled><?php echo "Select an option" ?></option>
 						<?php
 						while (have_rows('category')) : the_row();
 							$category_name = get_sub_field('category_name') ?>
-							
+
 							<option value="dropdown-<?php echo get_row_index(); ?>"><?php echo $category_name ?></option>
 
 						<?php endwhile; ?>

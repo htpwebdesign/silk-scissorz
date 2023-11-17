@@ -81,3 +81,26 @@ function silk_register_custom_post_types()
 add_action('init', 'silk_register_custom_post_types');
 
 
+// Flush rewrites when switching themes
+function silk_rewrite_flush()
+{
+    silk_register_custom_post_types();
+    flush_rewrite_rules();
+}
+add_action('after_switch_theme', 'silk_rewrite_flush');
+
+function silk_change_title_text($title)
+{
+    $screen = get_current_screen();
+
+    if ('silk-services' == $screen->post_type) {
+        $title = 'Add Service Name';
+    }
+    if ('silk-testimonials' == $screen->post_type) {
+        $title = 'Add Testimonial';
+    }
+
+    return $title;
+}
+
+add_filter('enter_title_here', 'silk_change_title_text');
