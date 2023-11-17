@@ -52,6 +52,7 @@ function silk_scissorz_setup()
 	register_nav_menus(
 		array(
 			'header' => esc_html__('Header Menu', 'silk-scissorz'),
+			'header-submenu' => esc_html__('Header Submenu', 'silk-scissorz'),
 			'social-media' => esc_html__('Social Media - Footer Left Side', 'silk-scissorz'),
 			'footer-right' => esc_html__('Footer Quick Link', 'silk-scissorz'),
 		)
