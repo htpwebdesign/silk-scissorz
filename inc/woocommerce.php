@@ -259,12 +259,15 @@ add_action('woocommerce_product_query', 'custom_pre_get_posts_query');
 
 // When a post is published and has booking term, add Service Cat automatically
 
-add_action('save_post', 'update_my_taxonomies');
-function update_my_taxonomies($post_id)
+function update_bookable_product_taxonomies($post_id)
 {
 	// Check if the post has a particular taxonomy
 	if (has_term('booking', 'product_type', $post_id)) {
+		// Remove the "Uncategorized" term
+		wp_remove_object_terms($post_id, 'uncategorized', 'product_cat');
 		// Assign a term to our post
-		wp_set_object_terms($post_id, 'services', 'product_cat');
+		wp_set_object_terms($post_id, 'services', 'product_cat', true);
 	}
 }
+
+add_action('save_post', 'update_bookable_product_taxonomies');

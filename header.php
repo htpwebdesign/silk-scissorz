@@ -59,4 +59,22 @@
 				);
 				?>
 			</nav><!-- #site-navigation -->
+
+			<!-- Site Submenu -->
+			<?php
+			if (has_nav_menu('header-submenu')) :
+			?>
+				<nav class="secondary-navigation">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'header-submenu',
+							'menu_id'        => 'header-submenu-menu',
+						)
+					);
+					?>
+				</nav>
+			<?php
+			endif;
+			?>
 		</header><!-- #masthead -->

@@ -27,29 +27,34 @@ get_header();
 				<?php
 				/* === Contact Info === */
 				if (have_rows('contact_info')) :
-					while (have_rows('contact_info')) : the_row();
-						$store_address = get_sub_field('store_address');
-						$store_phone = get_sub_field('store_phone');
-						$store_email = get_sub_field('store_email');
-						$store_parking_info = get_sub_field('store_parking_info');
-						$store_location_map = get_sub_field('store_location_map'); ?>
-
-						<address>
-							<p><?php echo esc_html($store_address); ?></p>
-							<a href="tel:<?php echo esc_html($store_phone); ?>"><?php echo esc_html($store_phone); ?></a>
-							<a href="mailto:<?php echo esc_html($store_email); ?>"><?php echo esc_html($store_email); ?></a>
-						</address>
-						<p><?php echo esc_html($store_parking_info); ?></p>
-						<div class="map">
-							<?php echo esc_html($store_location_map); ?>
-						</div>
-					<?php
-					endwhile;
+				?>
+					<article>
+						<h2>Contact Info</h2>
+						<?php
+						while (have_rows('contact_info')) : the_row();
+							$store_address = get_sub_field('store_address');
+							$store_phone = get_sub_field('store_phone');
+							$store_email = get_sub_field('store_email');
+							$store_parking_info = get_sub_field('store_parking_info');
+						?>
+							<address>
+								<p><?php echo esc_html($store_address); ?></p>
+								<a href="tel:<?php echo esc_html($store_phone); ?>"><?php echo esc_html($store_phone); ?></a>
+								<a href="mailto:<?php echo esc_html($store_email); ?>"><?php echo esc_html($store_email); ?></a>
+							</address>
+						<?php
+						endwhile;
+						?>
+					</article>
+				<?php
 				endif;
 
 				/* === Business Hours === */
 				if (have_rows('business_hours')) : ?>
 					<table>
+						<caption>
+							Business Hours
+						</caption>
 						<thead>
 							<?php
 							$day_of_week_label = get_sub_field_object('day_of_week');
@@ -93,6 +98,14 @@ get_header();
 				endif;
 				?>
 			</section>
+			<section class="map-section">
+				<h2>Parking Info</h2>
+				<p><?php echo esc_html($store_parking_info); ?></p>
+				<div class="map">
+					<!-- Map -->
+				</div>
+			</section>
+			<?php the_content(); ?>
 	<?php
 		endif;
 	endwhile; // end of the loop. 

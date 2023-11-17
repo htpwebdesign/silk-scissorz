@@ -38,7 +38,7 @@
 								$store_phone = get_sub_field('store_phone');
 								$store_email = get_sub_field('store_email');
 								$store_parking_info = get_sub_field('store_parking_info');
-								$store_location_map = get_sub_field('store_location_map'); ?>
+							?>
 
 								<address>
 									<p><?php echo esc_html($store_address); ?></p>
@@ -116,11 +116,11 @@
 					endif;
 					?>
 				</section>
-				<section>
+				<section class="map-section">
 					<h2>Parking Info</h2>
 					<p><?php echo esc_html($store_parking_info); ?></p>
 					<div class="map">
-						<?php echo esc_html($store_location_map); ?>
+						<!-- Map -->
 					</div>
 				</section>
 		<?php
