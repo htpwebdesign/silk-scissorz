@@ -264,9 +264,9 @@ function update_bookable_product_taxonomies($post_id)
 	// Check if the post has a particular taxonomy
 	if (has_term('booking', 'product_type', $post_id)) {
 		// Remove the "Uncategorized" term
-		wp_remove_object_terms($post_id, 'uncategorized', 'product_cat');
+		wp_remove_object_terms($post_id, 'Uncategorized', 'product_cat');
 		// Assign a term to our post
-		wp_set_object_terms($post_id, 'services', 'product_cat', true);
+		wp_set_object_terms($post_id, 'Services', 'product_cat', true);
 	}
 }
 
