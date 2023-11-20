@@ -4,11 +4,37 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
-	font-family: $font__main;
-	font-size: 1rem;
-	line-height: $font__line-height-body;
+  color: $color__text-main;
+  font-family: $font__main;
+  font-size: $font__size-base;
+  line-height: $font__line-height-body;
+  @media screen and (min-width: $breakpoint__desktop) {
+    font-size: $font__desktop-size-base;
+  }
 }
 
+h1 {
+  font-size: $font__size-h1;
+  line-height: $font__line-height-body;
+  @media screen and (min-width: $breakpoint__desktop) {
+    font-size: $font__desktop-size-h1;
+  }
+}
+
+h2 {
+  font-size: $font__size-h2;
+  line-height: $font__line-height-body;
+  @media screen and (min-width: $breakpoint__desktop) {
+    font-size: $font__desktop-size-h2;
+  }
+}
+
+h3 {
+  font-size: $font__size-h3;
+  line-height: $font__line-height-body;
+  @media screen and (min-width: $breakpoint__desktop) {
+    font-size: $font__desktop-size-h3;
+  }
+}
 @import "headings";
 @import "copy";

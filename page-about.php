@@ -59,7 +59,7 @@ get_header();
 					while ($stylists_query->have_posts()) : $stylists_query->the_post();
 						if (function_exists('get_field')) : ?>
 
-							<arricle class="stylist">
+							<article class="stylist">
 								<?php
 								if (get_field('stylist_image')) :
 									$stylist_image = get_field('stylist_image');
@@ -85,7 +85,7 @@ get_header();
 								<?php
 								endif;
 								?>
-							</arricle>
+							</article>
 					<?php
 						endif;
 					endwhile;

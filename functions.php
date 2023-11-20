@@ -146,6 +146,17 @@ add_action('widgets_init', 'silk_scissorz_widgets_init');
  */
 function silk_scissorz_scripts()
 {
+
+	// Google Fonts
+	wp_enqueue_style(
+		'silk-googlefonts',
+		'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;700;900&display=swap',
+		array(),
+		null, // only use null for Google Fonts
+		'all'
+	);
+
+
 	wp_enqueue_style('silk-scissorz-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_style_add_data('silk-scissorz-style', 'rtl', 'replace');
 
