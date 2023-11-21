@@ -16,6 +16,10 @@ const swiperHeroSection = new Swiper(".swiper-hero-section", {
     el: ".swiper-pagination",
     clickable: true,
   },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
   slidesPerView: 1,
   spaceBetween: 10,
 });

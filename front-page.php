@@ -22,7 +22,7 @@ get_header();
 	<?php
 	while (have_posts()) : the_post();
 	?>
-		<h1><?php the_title() ?></h1>
+		<h1 class="home__h1"><?php the_title() ?></h1>
 
 		<?php
 		if (function_exists('get_field')) :
@@ -43,7 +43,8 @@ get_header();
 										<div>
 											<?php echo wp_get_attachment_image($sub_image, 'full'); ?>
 										</div>
-										<div>
+										<!-- hero section CTA button -->
+										<div class="hero-btn">
 											<a href="<?php echo esc_url($sub_link); ?>"><?php echo $sub_button_text; ?></a>
 										</div>
 									</div>
@@ -122,8 +123,10 @@ get_header();
 					while ($services_query->have_posts()) : $services_query->the_post();
 					?>
 						<article>
-							<?php the_post_thumbnail('medium'); ?>
-							<h3><?php the_title() ?></h3>
+							<a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))) . '#service-' . get_the_ID(); ?>">
+								<?php the_post_thumbnail('medium'); ?>
+								<h3><?php the_title() ?></h3>
+							</a>
 						</article>
 
 					<?php
