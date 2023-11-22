@@ -156,6 +156,15 @@ function silk_scissorz_scripts()
 		'all'
 	);
 
+	// Google Maps API
+	wp_enqueue_script(
+		'silk-googlemaps',
+		'https://maps.googleapis.com/maps/api/js?key=AIzaSyAbDccbZ61WQAxDVzfGWOBdsahhN5AHT10&callback=Function.prototype',
+		array(),
+		null, // only use null for Google Fonts
+		'all'
+	);
+
 
 	wp_enqueue_style('silk-scissorz-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_style_add_data('silk-scissorz-style', 'rtl', 'replace');
@@ -173,6 +182,10 @@ function silk_scissorz_scripts()
 		wp_enqueue_script('dropdown', get_template_directory_uri() . '/js/dropdown.js',  array('jquery'), _S_VERSION, true);
 		wp_enqueue_script('accordion-faq', get_template_directory_uri() . '/js/accordion.js',  array('jquery'), _S_VERSION, true);
 	}
+
+	//Enqueue map js
+	wp_enqueue_script('map', get_template_directory_uri() . '/js/map.js',  array('jquery'), _S_VERSION, array('strategy' => 'defer'));
+
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -236,8 +249,9 @@ function silk_excerpt_more($more)
 
 add_filter('excerpt_more', 'silk_excerpt_more');
 
-function my_acf_google_map_api( $api ){
-    $api['key'] = 'AIzaSyDXkLNbXBmazlq41GVLYY5_9ivOAd3cNuA';
-    return $api;
+function my_acf_google_map_api($api)
+{
+	$api['key'] = 'AIzaSyAbDccbZ61WQAxDVzfGWOBdsahhN5AHT10';
+	return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');

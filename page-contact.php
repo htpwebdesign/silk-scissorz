@@ -36,6 +36,7 @@ get_header();
               $store_phone = get_sub_field('store_phone');
               $store_email = get_sub_field('store_email');
               $store_parking_info = get_sub_field('store_parking_info');
+              $store_location = get_sub_field('store_location_map');
             ?>
               <address>
                 <p><?php echo esc_html($store_address); ?></p>
@@ -104,6 +105,16 @@ get_header();
         <p><?php echo esc_html($store_parking_info); ?></p>
         <div class="map">
           <!-- Map -->
+          <?php
+          if ($store_location) :
+          ?>
+            <div class="acf-map" data-zoom="16">
+              <div class="marker" data-lat="<?php echo esc_attr($store_location['lat']); ?>" data-lng="<?php echo esc_attr($store_location['lng']); ?>"></div>
+            </div>
+          <?php
+          endif;
+          ?>
+
         </div>
       </section>
       <?php the_content(); ?>
