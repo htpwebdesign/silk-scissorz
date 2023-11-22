@@ -236,19 +236,4 @@ function silk_excerpt_more($more)
 
 add_filter('excerpt_more', 'silk_excerpt_more');
 
-// Google Map API Key
-function my_acf_google_map_api( $api ){
-    $api['key'] = 'AIzaSyAbDccbZ61WQAxDVzfGWOBdsahhN5AHT10';
-    return $api;
-}
-add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
-// Google Map for ACF
-function enqueue_custom_scripts() {
-    // Enqueue other scripts
-
-    // Enqueue ACF map script
-    wp_enqueue_script('acf-map-script', get_template_directory_uri() . '/acf-map.js', array('jquery'), null, true);
-}
-
-add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
