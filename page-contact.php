@@ -42,17 +42,21 @@ get_header();
                 <a href="tel:<?php echo esc_html($store_phone); ?>"><?php echo esc_html($store_phone); ?></a>
                 <a href="mailto:<?php echo esc_html($store_email); ?>"><?php echo esc_html($store_email); ?></a>
               </address>
-              <?php
-        $location = get_sub_field('store_location_map'); // Adjust the field name based on your ACF setup
-        if ($location) :
-            ?>
-            <div class="acf-map" data-zoom="16">
-                <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
-                    <!-- Marker content goes here -->
+              <section class="map-section">
+                <h2>Parking Info</h2>
+                <p><?php echo esc_html($store_parking_info); ?></p>
+      
+                <?php
+                $location = get_sub_field('store_location_map'); // Adjust the field name based on your ACF setup
+                if ($location) :
+                ?>
+                <div class="acf-map" data-zoom="16">
+                    <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
+                        <!-- Marker content goes here -->
+                    </div>
                 </div>
-            </div>
-        <?php endif; ?>
-
+                <?php endif; ?>
+              </section>
             <?php
             endwhile;
             ?>
@@ -110,10 +114,7 @@ get_header();
         endif;
         ?>
       </section>
-      <section class="map-section">
-        <h2>Parking Info</h2>
-        
-    </section>
+      
     <?php the_content(); ?>
     <?php
 		endif;
