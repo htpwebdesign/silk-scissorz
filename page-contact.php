@@ -101,24 +101,24 @@ get_header();
     </section>
     <section class="map-section">
         <h2>Parking Info</h2>
-        <p><?php echo esc_html($store_parking_info); ?></p>
-        <div class="map">
-            <!-- Map -->
-        </div>
+        <?php
+        $location = get_field('location'); // Adjust the field name based on your ACF setup
+        if ($location) :
+            ?>
+            <div class="acf-map" data-zoom="16">
+                <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
+                    <!-- Marker content goes here -->
+                </div>
+            </div>
+        <?php endif; ?>
+
     </section>
     <?php the_content(); ?>
     <?php
 		endif;
 	endwhile; // end of the loop. 
 	?>
-    <?php
-	function my_acf_google_map_api($api)
-	{
-		$api['key'] = 'store_location_map';
-		return $api;
-	}
-	add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
-	?>
+    
 
 </main><!-- #main -->
 

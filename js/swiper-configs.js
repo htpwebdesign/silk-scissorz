@@ -21,5 +21,6 @@ const swiperHeroSection = new Swiper(".swiper-hero-section", {
     prevEl: ".swiper-button-prev",
   },
   slidesPerView: 1,
+  centeredSlides: true,
   spaceBetween: 10,
 });

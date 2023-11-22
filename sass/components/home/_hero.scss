@@ -1,11 +1,18 @@
-@import "abstract/variables/sas__color";
-
 div.hero-btn a{
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-decoration: none;
     background-color: $color__pink;
-    border: 1px solid 
+    color: black;
+    border: 1px solid;
+    padding: 0.25rem 1rem;
+}
+.hero-btn {
+    padding: 1rem;
 }
 .home__h1 {
-    font-size: 2rem;
+    display: none;
+}
+img.swiper {
+    width: 500px;
+    height: 300px;
 }
