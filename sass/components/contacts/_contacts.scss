@@ -10,8 +10,15 @@
 .contact__info {
     width: 50%;
     h2 {
-    font-size: 1.75rem;
-    margin: 0;
+        font-size: 1.75rem;
+        margin: 0;
+    }
+    a {
+        color: $color__black;
+        text-decoration: none;
+    }
+    a:hover {
+        color: $color__darkpink;
     }
 }
 .business__info {

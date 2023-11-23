@@ -39,11 +39,11 @@ get_header();
 									$sub_button_text = get_sub_field('button_text');
 									$sub_link = get_sub_field('button_link');
 								?>
-									<div class="swiper-slide siwiper-hero">
+									<div class="swiper-slide swiper-hero">
 										<div class="slide-content">
-											<div>
+											
 												<?php echo wp_get_attachment_image($sub_image, 'full'); ?>
-											</div>
+											
 											<!-- hero section CTA button -->
 											<div class="hero-btn">
 												<a href="<?php echo esc_url($sub_link); ?>"><?php echo $sub_button_text; ?></a>
@@ -192,9 +192,9 @@ get_header();
 							?>
 						</div>
 						<div class="swiper-pagination-t"></div>
+						<button class="swiper-button-next-t"></button>
+						<button class="swiper-button-prev-t"></button>
 					</div>
-					<button class="swiper-button-next-t"></button>
-					<button class="swiper-button-prev-t"></button>
 				</section>
 	<?php
 			endif;

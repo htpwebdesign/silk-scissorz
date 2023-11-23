@@ -10,7 +10,7 @@ const swiperTestimonials = new Swiper(".swiper-testimonials", {
     nextEl: ".swiper-button-next-t",
     prevEl: ".swiper-button-prev-t",
   },
-  slidesPerView: 2,
+  slidesPerView: 1,
   spaceBetween: 10,
 });
 

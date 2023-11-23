@@ -2,13 +2,9 @@
     @include padding-side;
 }
 
-.swiper-slide-testimonials {
+.swiper-testimonials {
     width: 80%;
-    background-color: $color__beige;
-    article {
-        margin: 2rem;
-    }
-}
+    position: relative;
 
 .swiper-slide {
     padding: 2rem;
@@ -16,6 +12,15 @@
         margin-top: 0;
     }
 }
+}
+
+.testimonials__content {
+    background-color: $color__beige;
+    article {
+        margin: 2rem;
+    }
+}
+
 
 .swiper-button-next-t, 
 .swiper-button-prev-t {
