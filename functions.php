@@ -242,7 +242,7 @@ add_filter('excerpt_more', 'silk_excerpt_more');
 
 function my_acf_google_map_api($api)
 {
-	$api['key'] = 'AIzaSyDXkLNbXBmazlq41GVLYY5_9ivOAd3cNuA';
+	$api['key'] = 'AIzaSyAbDccbZ61WQAxDVzfGWOBdsahhN5AHT10';
 	return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
