@@ -108,4 +108,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Swiper
 --------------------------------------------- */
 @import "vendor/swiper";
-@import "vendor/pagination";
+@import "vendor/pagination-h";
+@import "vendor/pagination-t";
+@import "vendor/navigation-h";
+@import "vendor/navigation-t";

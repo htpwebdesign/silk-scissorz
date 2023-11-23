@@ -1,26 +1,31 @@
-const swiper = new Swiper(".swiper", {
+// Testimonials Swiper
+const swiperTestimonials = new Swiper(".swiper-testimonials", {
   loop: true,
   autoHeight: true,
   pagination: {
-    el: ".swiper-pagination",
+    el: ".swiper-pagination-t",
     clickable: true,
   },
-  slidesPerView: 1,
+  navigation: {
+    nextEl: ".swiper-button-next-t",
+    prevEl: ".swiper-button-prev-t",
+  },
+  slidesPerView: 2,
   spaceBetween: 10,
 });
 
+// Hero Swiper
 const swiperHeroSection = new Swiper(".swiper-hero-section", {
   loop: true,
   autoHeight: true,
   pagination: {
-    el: ".swiper-pagination",
+    el: ".swiper-pagination-h",
     clickable: true,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-next-h",
+    prevEl: ".swiper-button-prev-h",
   },
   slidesPerView: 1,
-  centeredSlides: true,
   spaceBetween: 10,
 });

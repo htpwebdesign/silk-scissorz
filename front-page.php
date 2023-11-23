@@ -31,7 +31,7 @@ get_header();
 			if (get_field('carousel')) :
 				if (have_rows('carousel')) : ?>
 					<section class="carousel">
-						<div class="swiper-hero-section">
+						<div class="swiper swiper-hero-section">
 							<div class="swiper-wrapper">
 								<?php
 								while (have_rows('carousel')) : the_row();
@@ -39,19 +39,23 @@ get_header();
 									$sub_button_text = get_sub_field('button_text');
 									$sub_link = get_sub_field('button_link');
 								?>
-									<div class="swiper-slide">
-										<div>
-											<?php echo wp_get_attachment_image($sub_image, 'full'); ?>
-										</div>
-										<!-- hero section CTA button -->
-										<div class="hero-btn">
-											<a href="<?php echo esc_url($sub_link); ?>"><?php echo $sub_button_text; ?></a>
+									<div class="swiper-slide siwiper-hero">
+										<div class="slide-content">
+											<div>
+												<?php echo wp_get_attachment_image($sub_image, 'full'); ?>
+											</div>
+											<!-- hero section CTA button -->
+											<div class="hero-btn">
+												<a href="<?php echo esc_url($sub_link); ?>"><?php echo $sub_button_text; ?></a>
+											</div>
 										</div>
 									</div>
 								<?php
 								endwhile; ?>
 							</div>
-							<div class="swiper-pagination"></div>
+							<div class="swiper-pagination-h"></div>
+							<button class="swiper-button-next-h"></button>
+							<button class="swiper-button-prev-h"></button>
 						</div>
 					</section>
 					<?php
@@ -164,7 +168,7 @@ get_header();
 			if ($testimonials_query->have_posts()) : ?>
 				<section class="testimonials">
 					<h2>Testimonials</h2>
-					<div class="swiper">
+					<div class="swiper  swiper-testimonials">
 						<div class="swiper-wrapper">
 							<?php
 							while ($testimonials_query->have_posts()) : $testimonials_query->the_post();
@@ -172,7 +176,7 @@ get_header();
 									$testimonials_text = get_field('testimonials_text');
 									$clients_name = get_field('clients_name');
 							?>
-									<div class="swiper-slide">
+									<div class="swiper-slide swiper-slide-testimonials">
 										<article>
 											<h3><?php the_title(); ?></h3>
 											<blockquote>
@@ -187,8 +191,10 @@ get_header();
 							wp_reset_postdata();
 							?>
 						</div>
-						<div class="swiper-pagination"></div>
+						<div class="swiper-pagination-t"></div>
 					</div>
+					<button class="swiper-button-next-t"></button>
+					<button class="swiper-button-prev-t"></button>
 				</section>
 	<?php
 			endif;
