@@ -1,60 +1,78 @@
 ul.products {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 
-	li.product {
-		list-style: none;
-		position: relative;
-		margin-bottom: 2em;
+  li.product {
+    list-style: none;
+    position: relative;
+    margin-bottom: 2em;
+    text-align: center;
 
-		img {
-			display: block;
-		}
+    a {
+      text-decoration: none;
 
-		.button {
-			display: block;
-		}
-	}
+      span.onsale {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $color__pink;
+        padding: 0.5em;
+        color: $color__white;
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        font-family: $font__main;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .button {
+      display: block;
+    }
+  }
 }
 
-@media screen and (min-width: 48em) {
-
-	ul.products {
-
-		li.product {
-
-			@include column-width(3);
-			float: left;
-			margin-right: $columns__margin;
-
-			&.first {
-				clear: both;
-			}
-
-			&.last {
-				margin-right: 0;
-			}
-		}
-	}
-
-	ul.products.columns-1 {
-
-		li.product {
-			float: none;
-			width: 100%;
-		}
-
-	}
-
-	@for $i from 2 through 6 {
-
-		ul.products.columns-#{$i} {
-
-			li.product {
-
-				@include column-width( $i );
-			}
-
-		}
-	}
+ul.products {
+  //   @include padding-side;
+  @include grid-layout;
 }
+
+// @media screen and (min-width: 48em) {
+//   ul.products {
+//     li.product {
+//       @include column-width(3);
+//       float: left;
+//       margin-right: $columns__margin;
+
+//       &.first {
+//         clear: both;
+//       }
+
+//       &.last {
+//         margin-right: 0;
+//       }
+//     }
+//   }
+
+//   ul.products.columns-1 {
+//     li.product {
+//       float: none;
+//       width: 100%;
+//     }
+//   }
+
+//   @for $i from 2 through 6 {
+//     ul.products.columns-#{$i} {
+//       li.product {
+//         @include column-width($i);
+//       }
+//     }
+//   }
+// }

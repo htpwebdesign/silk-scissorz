@@ -1,0 +1,16 @@
+.grid-system {
+  @include padding-side;
+  @include grid-layout;
+
+  .section-heading {
+    grid-column: 1 / -1;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .section-cta-link {
+    grid-column: 1 / -1;
+  }
+}

@@ -97,7 +97,7 @@ get_header();
 			/* === Gallery Section === */
 			$featured_posts = get_field('gallery');
 			if ($featured_posts) : ?>
-				<section class="gallery">
+				<section class="gallery gallery-layout">
 					<?php foreach ($featured_posts as $post) :
 						setup_postdata($post); ?>
 						<a class="gallery__item" href="<?php the_permalink() ?>">
@@ -121,8 +121,8 @@ get_header();
 			);
 			$services_query = new WP_Query($args);
 			if ($services_query->have_posts()) : ?>
-				<section class="services">
-					<h2>Our Services</h2>
+				<section class="services grid-system">
+					<h2 class="section-heading">Our Services</h2>
 					<?php
 					while ($services_query->have_posts()) : $services_query->the_post();
 					?>
@@ -137,7 +137,7 @@ get_header();
 					endwhile;
 					wp_reset_postdata();
 					?>
-					<a href="<?php echo esc_url(get_page_link(24)) ?>">All Services</a>
+					<a class="section-cta-link" href="<?php echo esc_url(get_page_link(24)) ?>">All Services</a>
 				</section>
 			<?php
 			endif;
@@ -149,7 +149,7 @@ get_header();
 				<a href="<?php echo wc_get_page_permalink('shop') ?>">See All Products</a>
 				<?php
 				/* === Products Section === */
-				echo do_shortcode('[products limit="4" columns="4" orderby="popularity" class="quick-sale" on_sale="true" ]');
+				echo do_shortcode('[products limit="3" columns="3" orderby="popularity" class="quick-sale" on_sale="true" ]');
 				?>
 			</section>
 			<?php
