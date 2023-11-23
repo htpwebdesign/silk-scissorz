@@ -1,0 +1,29 @@
+.testimonials {
+    @include padding-side;
+}
+
+.swiper-slide-testimonials {
+    width: 80%;
+    background-color: $color__beige;
+    article {
+        margin: 2rem;
+    }
+}
+
+.swiper-slide {
+    padding: 2rem;
+    h3 {
+        margin-top: 0;
+    }
+}
+
+.swiper-button-next-t, 
+.swiper-button-prev-t {
+    background-color: transparent;
+    border: none;
+    color: hotpink!important;
+}
+
+.swiper-pagination-t {
+    text-align: center;
+}

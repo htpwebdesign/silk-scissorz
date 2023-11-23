@@ -1,18 +1,59 @@
 div.hero-btn a{
     font-size: 1.5rem;
+    font-weight: 600;
     text-decoration: none;
     background-color: $color__pink;
-    color: black;
-    border: 1px solid;
-    padding: 0.25rem 1rem;
-}
-.hero-btn {
-    padding: 1rem;
+    color: $color__darkgray;
+    border: 1px solid $color__darkgray;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover {
+        background-color: $color__darkgray;
+        border: 1px solid $color__pink;
+        color: $color__pink;
+    }
 }
 .home__h1 {
     display: none;
 }
-img.swiper {
-    width: 500px;
-    height: 300px;
+
+.siwiper-hero {
+    position: relative;
+}
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.hero-btn {
+    position: absolute;
+    bottom: 20%;
+    right: 20%;
+    padding: 1rem;
+}
+.siwiper-hero > div {
+    width: 100%; /* Set to 100% of the viewport width */
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.siwiper-hero-h > div > img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+.swiper-button-prev-h, 
+.swiper-button-next-h {
+    color: hotpink!important;
+    background-color: transparent;
+    border: none;
+}
+.swiper-pagination-bullet-active {
+    background: hotpink!important;
+}
+.swiper-pagination-h {
+    text-align: center;
+    margin-top: 1rem;
 }
