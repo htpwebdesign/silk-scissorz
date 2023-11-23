@@ -117,10 +117,30 @@
 					?>
 				</section>
 				<section class="map-section">
+					<div class="map">
+						<!-- Map and Parking Info -->
+						<?php
+            			while (have_rows('contact_info')) : the_row();
+              			$store_parking_info = get_sub_field('store_parking_info');
+        				?>
+					<?php
+					$location = get_sub_field('store_location_map'); // Adjust the field name based on your ACF setup
+					if ($location) :
+					?>
+					<div class="acf-map" data-zoom="13">
+						<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
+							<!-- Marker content goes here -->
+						</div>
+					</div>
 					<h2>Parking Info</h2>
 					<p><?php echo esc_html($store_parking_info); ?></p>
-					<div class="map">
-						<!-- Map -->
+					<?php 
+					endif; 
+					?>
+				</section>
+        <?php
+        endwhile;
+        ?>
 					</div>
 				</section>
 		<?php

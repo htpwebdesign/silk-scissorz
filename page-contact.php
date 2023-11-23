@@ -24,7 +24,7 @@ get_header();
           /* === Contact Info === */
           if (function_exists('get_field')) : 
           ?>
-          <section>
+    <section>
         <div class="contact__businesshours">
           <div class="contact__info__wrap">
               <?php if (have_rows('contact_info')) : ?>
@@ -92,12 +92,12 @@ get_header();
               </tbody>
             </table>
           </div>
-      </div>
+        </div>
       
         <?php
         endif;
         ?>
-
+    </section>
     <div class="map__wrap">
         <!-- Map and Parking Info -->
         <?php
@@ -109,7 +109,7 @@ get_header();
               $location = get_sub_field('store_location_map'); // Adjust the field name based on your ACF setup
               if ($location) :
               ?>
-              <div class="acf-map" data-zoom="16">
+              <div class="acf-map" data-zoom="13">
                   <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
                       <!-- Marker content goes here -->
                   </div>
@@ -123,11 +123,12 @@ get_header();
         <?php
         endwhile;
         ?>
-      </section>
   </div>
-  <div class="contact__form">
-    <?php the_content(); ?>
-  </div>
+    <section>
+      <div class="contact__form">
+        <?php the_content(); ?>
+      </div>
+    </section>
   <?php
 		endif;
 	endwhile; // end of the loop. 
