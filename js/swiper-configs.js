@@ -12,6 +12,13 @@ const swiperTestimonials = new Swiper(".swiper-testimonials", {
   },
   slidesPerView: 1,
   spaceBetween: 10,
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is <= 499px
+    768: {
+        slidesPerView: 2,
+    }
+  }
 });
 
 // Hero Swiper
