@@ -2,7 +2,7 @@ div.hero-btn a{
     @include cta-btn;
 }
 .home__h1 {
-    display: none;
+  display: none;
 }
 
 .swiper-hero {
@@ -15,15 +15,15 @@ div.hero-btn a{
     }
 }
 .slide-content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .hero-btn {
-    position: absolute;
-    bottom: 20%;
-    right: 20%;
-    padding: 1rem;
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  padding: 1rem;
 }
 .swiper-hero > div {
     width: 100%; /* Set to 100% of the viewport width */
@@ -43,15 +43,14 @@ div.hero-btn a{
   }
 .swiper-button-prev-h, 
 .swiper-button-next-h {
-    color: hotpink!important;
-    background-color: transparent;
-    border: none;
+  color: hotpink !important;
+  background-color: transparent;
+  border: none;
 }
 .swiper-pagination-bullet-active {
-    background: hotpink!important;
+  background: hotpink !important;
 }
 .swiper-pagination-h {
-    text-align: center;
-    margin-top: 1rem;
+  text-align: center;
+  margin-top: 1rem;
 }
-

@@ -181,7 +181,6 @@ function silk_scissorz_scripts()
 	// Google Map For ACF
 	wp_enqueue_script('google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAbDccbZ61WQAxDVzfGWOBdsahhN5AHT10&callback=Function.prototype', array(), _S_VERSION, true);
 	wp_enqueue_script('acf-map-script', get_template_directory_uri() . '/js/acf-map.js', array('jquery', 'google-map'), _S_VERSION, true);
-
 }
 add_action('wp_enqueue_scripts', 'silk_scissorz_scripts');
 
@@ -241,4 +240,9 @@ function silk_excerpt_more($more)
 
 add_filter('excerpt_more', 'silk_excerpt_more');
 
-
+function my_acf_google_map_api($api)
+{
+	$api['key'] = 'AIzaSyAbDccbZ61WQAxDVzfGWOBdsahhN5AHT10';
+	return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');

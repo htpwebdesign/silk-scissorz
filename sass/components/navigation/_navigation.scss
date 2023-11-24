@@ -1,6 +1,6 @@
 .main-navigation {
   display: block;
-  width: 100%;
+  // width: 100%;
 
   ul {
     display: none;
@@ -58,22 +58,20 @@
   }
 
   a {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     color: $color__text-main;
     font-weight: 700;
-    padding: 1em 1em 1em 1em;
+    // padding: 1em 1em 1em 1em;
+    padding: 0.5em;
     transition: color 0.2s ease-in-out;
-  }
-
-  a[aria-current="page"] {
-    color: $color__link-visited;
   }
 
   .current_page_item > a,
   .current-menu-item > a,
   .current_page_ancestor > a,
   .current-menu-ancestor > a {
+    color: $color__link-visited;
   }
 }
 
@@ -83,7 +81,23 @@
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+.menu-toggle {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.main-navigation.toggled ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  z-index: 99999;
+}
+
+@media screen and (min-width: $breakpoint__tablet) {
   .menu-toggle {
     display: none;
   }

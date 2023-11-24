@@ -78,7 +78,7 @@ get_header();
         <section class="products">
             <a href="<?php echo wc_get_page_permalink('shop') ?>">See All Products</a>
             <?php
-            echo do_shortcode('[products limit="4" columns="4" orderby="rand" category="services" cat_operator="NOT IN" class="random-products"]');
+            echo do_shortcode('[products limit="3" columns="3" orderby="rand" category="services" cat_operator="NOT IN" class="random-products"]');
             ?>
         </section>
     <?php endwhile; // End of the loop. 

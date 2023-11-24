@@ -1,57 +1,69 @@
 // Center block
 @mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
-	width: map-get($columns, $numberColumns) - (($columns__margin * ($numberColumns - 1)) / $numberColumns );
+  width: map-get($columns, $numberColumns) -
+    (($columns__margin * ($numberColumns - 1)) / $numberColumns);
 }
-
 
 @mixin padding-side {
-	@media(min-width:$breakpoint__mobile) {
-		padding: 0 3rem;
-	}
+  @media (min-width: $breakpoint__mobile) {
+    padding: 0 3rem;
+  }
 
-	padding: 0 1rem;
+  padding: 0 1rem;
 }
-
 @mixin cta-btn {
-	font-size: 1.25rem;
-    font-family: $font__heading;
-    text-decoration: none;
-	text-transform: uppercase;
-    background-color: $color__pink;
-    color: $color__darkgray;
-    border: 1px solid $color__darkgray;
-    border-radius: 8px;
-    padding: 0.6rem 1.25rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    &:hover {
-        background-color: $color__darkgray;
-        border: 1px solid $color__pink;
-        color: $color__pink;
-    }
+  font-size: 1.25rem;
+  font-family: $font__heading;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: $color__pink;
+  color: $color__darkgray;
+  border: 1px solid $color__darkgray;
+  border-radius: 8px;
+  padding: 0.6rem 1.25rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    background-color: $color__darkgray;
+    border: 1px solid $color__pink;
+    color: $color__pink;
+  }
 }
 
 @mixin cart-btn {
-	font-size: 1.25rem;
-    font-family: $font__heading;
-    text-decoration: none;
-	text-transform: uppercase;
-    background-color: $color__darkgray;
-    color: $color__pink;
+  font-size: 1.25rem;
+  font-family: $font__heading;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: $color__darkgray;
+  color: $color__pink;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.25rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    background-color: $color__pink;
     border: none;
-    border-radius: 8px;
-    padding: 0.6rem 1.25rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    &:hover {
-        background-color: $color__pink;
-        border: none;
-        color: $color__darkgray;
-    }
+    color: $color__darkgray;
+  }
 }
 
+@mixin grid-layout($gap: 2rem) {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: $gap;
+
+  @media screen and (min-width: $breakpoint__mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: $breakpoint__tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
