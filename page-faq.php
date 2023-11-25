@@ -16,7 +16,7 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="site-main-faq">
 	<!-- Dropdown menu -->
 
 
@@ -28,20 +28,20 @@ get_header();
 			if (get_field('category')) :
 
 				if (have_rows('category')) : ?>
+					<div id="category-area">
+						<label for="category">Choose a category:</label>
+						<select name="categories" id="categories">
+							<option selected disabled><?php echo "Select an option" ?></option>
+							<?php
+							while (have_rows('category')) : the_row();
+								$category_name = get_sub_field('category_name') ?>
 
-					<label for="category">Choose a category:</label>
-					<select name="categories" id="categories">
-						<option selected disabled><?php echo "Select an option" ?></option>
-						<?php
-						while (have_rows('category')) : the_row();
-							$category_name = get_sub_field('category_name') ?>
+								<option value="dropdown-<?php echo get_row_index(); ?>"><?php echo $category_name ?></option>
 
-							<option value="dropdown-<?php echo get_row_index(); ?>"><?php echo $category_name ?></option>
+							<?php endwhile; ?>
 
-						<?php endwhile; ?>
-
-					</select>
-
+						</select>
+					</div>
 					<?php endif;
 				if (have_rows('category')) :
 					while (have_rows('category')) : the_row();
