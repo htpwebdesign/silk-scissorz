@@ -1,0 +1,107 @@
+.site-footer {
+  @include padding-side;
+
+  h2,
+  caption,
+  header {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+    font-size: $font__size-h2;
+    line-height: $font__line-height-body;
+    font-family: $font__main;
+    font-weight: bold;
+    text-align: center;
+    @media screen and (min-width: $breakpoint__desktop) {
+      font-size: $font__desktop-size-h2;
+    }
+  }
+
+  .contact-section {
+    @include grid-layout;
+
+    article {
+      span {
+        font-weight: bold;
+      }
+      p {
+        margin: 0;
+        margin-bottom: 1rem;
+      }
+    }
+
+    table {
+      text-align: center;
+      thead tr {
+        display: none;
+
+        @media screen and (min-width: $breakpoint__desktop) {
+          display: table-row;
+        }
+      }
+      tbody tr {
+        @media screen and (min-width: $breakpoint__mobile) {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;
+        }
+
+        @media screen and (min-width: $breakpoint__tablet) {
+          display: table-row;
+        }
+
+        td:first-child {
+          font-weight: bold;
+          @media screen and (min-width: $breakpoint__mobile) {
+            flex: 1 1 100%;
+          }
+          //   @media screen and (min-width: $breakpoint__tablet) {
+          //     flex: 1 1 25%;
+          //   }
+        }
+      }
+    }
+
+    .footer-navigation {
+      li {
+        margin: 0 0.5rem;
+        text-align: center;
+        a {
+          color: $color__text-main;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          display: block;
+          &:hover {
+            color: $color__link-visited;
+            background-color: $color__pink;
+          }
+        }
+      }
+    }
+  }
+
+  .social-media-navigation {
+    ul {
+      display: flex;
+      gap: 1rem;
+
+      li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        a {
+          color: $color__text-main;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          display: block;
+          &:hover {
+            svg {
+              fill: $color__link-visited;
+            }
+          }
+        }
+      }
+    }
+  }
+}

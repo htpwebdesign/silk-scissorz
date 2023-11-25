@@ -25,7 +25,7 @@
 		while ($contact_query->have_posts()) : $contact_query->the_post();
 			if (function_exists('get_field')) :
 	?>
-				<section>
+				<section class="contact-section">
 					<?php
 					/* === Contact Info === */
 					if (have_rows('contact_info')) :
@@ -41,9 +41,13 @@
 							?>
 
 								<address>
+									<span>Address:</span>
 									<p><?php echo esc_html($store_address); ?></p>
-									<a href="tel:<?php echo esc_html($store_phone); ?>"><?php echo esc_html($store_phone); ?></a>
-									<a href="mailto:<?php echo esc_html($store_email); ?>"><?php echo esc_html($store_email); ?></a>
+									<span>Phone:</span>
+									<p><a href="tel:<?php echo esc_html($store_phone); ?>"><?php echo esc_html($store_phone); ?></a></p>
+									<span>Email:</span>
+									<p><a href="mailto:<?php echo esc_html($store_email); ?>"><?php echo esc_html($store_email); ?></a></p>
+
 								</address>
 							<?php
 							endwhile;
@@ -102,7 +106,9 @@
 
 					if (has_nav_menu('footer-right')) :
 					?>
+
 						<nav class="footer-navigation">
+							<header>Quick Links</header>
 							<?php
 							wp_nav_menu(
 								array(
@@ -120,64 +126,61 @@
 					<div class="map">
 						<!-- Map and Parking Info -->
 						<?php
-            			while (have_rows('contact_info')) : the_row();
-              			$store_parking_info = get_sub_field('store_parking_info');
-        				?>
-					<?php
-					$location = get_sub_field('store_location_map'); // Adjust the field name based on your ACF setup
-					if ($location) :
-					?>
-					<div class="acf-map" data-zoom="13">
-						<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
-							<!-- Marker content goes here -->
-						</div>
-					</div>
-					<h2>Parking Info</h2>
-					<p><?php echo esc_html($store_parking_info); ?></p>
-					<?php 
-					endif; 
-					?>
+						while (have_rows('contact_info')) : the_row();
+							$store_parking_info = get_sub_field('store_parking_info');
+						?>
+							<?php
+							$location = get_sub_field('store_location_map'); // Adjust the field name based on your ACF setup
+							if ($location) :
+							?>
+								<h2>Parking Info</h2>
+								<p><?php echo esc_html($store_parking_info); ?></p>
+								<div class="acf-map" data-zoom="13">
+									<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
+										<!-- Marker content goes here -->
+									</div>
+								</div>
+							<?php
+							endif;
+							?>
 				</section>
-        <?php
-        endwhile;
-        ?>
-					</div>
-				</section>
-		<?php
-			endif;
-		endwhile;
-		wp_reset_postdata();
-	endif;
-
-	if (has_nav_menu('social-media')) :
-		?>
-		<nav class="footer-navigation">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'social-media',
-					'menu_id'        => 'social-media-menu',
-				)
-			);
-			?>
-		</nav>
 	<?php
-	endif;
-	?>
+						endwhile;
 
-	<div class="site-info">
-		<a href="<?php echo esc_url(__('https://wordpress.org/', 'silk-scissorz')); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf(esc_html__('Proudly powered by %s', 'silk-scissorz'), 'WordPress');
-			?>
-		</a>
-		<span class="sep"> | </span>
+					endif;
+				endwhile;
+				wp_reset_postdata();
+			endif;
+
+			if (has_nav_menu('social-media')) :
+	?>
+	<nav class="social-media-navigation">
 		<?php
-		/* translators: 1: Theme name, 2: Theme author. */
-		printf(esc_html__('Theme: %1$s by %2$s.', 'silk-scissorz'), 'silk-scissorz', '<a href="https://silkandscissorz.bcitwebdeveloper.ca/">FWD 34 - Willy, Kaori, Khushi, Jadie</a>');
+				wp_nav_menu(
+					array(
+						'theme_location' => 'social-media',
+						'menu_id'        => 'social-media-menu',
+					)
+				);
 		?>
-	</div><!-- .site-info -->
+	</nav>
+<?php
+			endif;
+?>
+
+<div class="site-info">
+	<a href="<?php echo esc_url(__('https://wordpress.org/', 'silk-scissorz')); ?>">
+		<?php
+		/* translators: %s: CMS name, i.e. WordPress. */
+		printf(esc_html__('Proudly powered by %s', 'silk-scissorz'), 'WordPress');
+		?>
+	</a>
+	<span class="sep"> | </span>
+	<?php
+	/* translators: 1: Theme name, 2: Theme author. */
+	printf(esc_html__('Theme: %1$s by %2$s.', 'silk-scissorz'), 'silk-scissorz', '<a href="https://silkandscissorz.bcitwebdeveloper.ca/">FWD 34 - Willy, Kaori, Khushi, Jadie</a>');
+	?>
+</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
