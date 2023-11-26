@@ -10,7 +10,10 @@
     }
     .about__content {
         background-color: $color__beige;
-        margin: 1rem;
+        margin: 1rem 0;
+        @media (min-width: $breakpoint__tablet) {
+            margin: 1rem;
+        }
         p {
             padding: 1.25rem;
             margin: 0;

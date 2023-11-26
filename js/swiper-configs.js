@@ -14,7 +14,6 @@ const swiperTestimonials = new Swiper(".swiper-testimonials", {
   spaceBetween: 10,
   // Responsive breakpoints
   breakpoints: {
-    // when window width is <= 499px
     768: {
         slidesPerView: 2,
     }

@@ -180,32 +180,34 @@ get_header();
 			if ($testimonials_query->have_posts()) : ?>
 				<section class="testimonials">
 					<h2>Testimonials</h2>
-					<div class="swiper  swiper-testimonials">
-						<div class="swiper-wrapper">
-							<?php
-							while ($testimonials_query->have_posts()) : $testimonials_query->the_post();
-								if (get_field('testimonials_text') && get_field('clients_name')) :
-									$testimonials_text = get_field('testimonials_text');
-									$clients_name = get_field('clients_name');
-							?>
-									<div class="swiper-slide swiper-slide-testimonials">
-										<article>
-											<h3><?php the_title(); ?></h3>
-											<blockquote>
-												<p><?php echo esc_html($testimonials_text) ?></p>
-												<cite><?php echo esc_html($clients_name) ?></cite>
-											</blockquote>
-										</article>
-									</div>
-							<?php
+					<div class="swiper-testimonials-container">
+						<div class="swiper  swiper-testimonials">
+							<div class="swiper-wrapper">
+								<?php
+									while ($testimonials_query->have_posts()) : $testimonials_query->the_post();
+									if (get_field('testimonials_text') && get_field('clients_name')) :
+										$testimonials_text = get_field('testimonials_text');
+										$clients_name = get_field('clients_name');
+										?>
+								<div class="swiper-slide swiper-slide-testimonials">
+									<article class="testimonials__content">
+										<h3><?php the_title(); ?></h3>
+										<blockquote>
+											<p><?php echo esc_html($testimonials_text) ?></p>
+											<cite><?php echo esc_html($clients_name) ?></cite>
+										</blockquote>
+									</article>
+								</div>
+								<?php
 								endif;
-							endwhile;
-							wp_reset_postdata();
-							?>
+								endwhile;
+								wp_reset_postdata();
+								?>
+							</div>
 						</div>
 						<div class="swiper-pagination-t"></div>
-						<button class="swiper-button-next-t"></button>
-						<button class="swiper-button-prev-t"></button>
+						<div class="swiper-button-next-t"></div>
+						<div class="swiper-button-prev-t"></div>
 					</div>
 				</section>
 	<?php
