@@ -1,0 +1,5 @@
+/*GENERAL STYLING*/
+//adding padding to the body content
+.privacy-policy .site-main{
+    @include padding-side;
+  }

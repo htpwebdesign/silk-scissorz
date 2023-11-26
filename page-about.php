@@ -21,7 +21,7 @@ get_header();
 		<h1><?php the_title(); ?></h1>
 		<?php
 		if (function_exists('get_field')) : ?>
-			<section>
+			<section id="about-us-area">
 				<?php
 				if (get_field('about_us')) :
 					$about_us = get_field('about_us'); ?>
@@ -66,6 +66,7 @@ get_header();
 									echo wp_get_attachment_image($stylist_image, 'full');
 								endif;
 								?>
+								<div class="stylist-text">
 								<h3>
 									<?php the_title(); ?>
 									<?php
@@ -85,6 +86,7 @@ get_header();
 								<?php
 								endif;
 								?>
+								</div>
 							</article>
 					<?php
 						endif;
@@ -92,7 +94,9 @@ get_header();
 					wp_reset_postdata();
 					?>
 				</div>
+				<div class="stylist-cta">
 				<a href="<?php echo esc_url(get_page_link(141)) ?>">Book Now</a>
+				</div>
 			</section>
 	<?php
 		endif;
@@ -104,5 +108,5 @@ get_header();
 </main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
