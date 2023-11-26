@@ -1,0 +1,46 @@
+.about {
+    @include padding-side;
+    margin: 2rem 0;
+    .about__wrap {
+    @media (min-width: $breakpoint__tablet) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+    }
+    .about__content {
+        background-color: $color__beige;
+        margin: 1rem;
+        p {
+            padding: 1.25rem;
+            margin: 0;
+        }
+        @media (min-width: $breakpoint__mobile) {
+            p {
+                padding: 1.5rem;
+            }
+        }
+        @media (min-width: $breakpoint__tablet) {
+            flex-basis: 60%;
+        }
+    }
+    .about__image {
+        @media (min-width: $breakpoint__mobile) {
+            width: 80%;
+            margin: 0 auto;
+        }
+        @media (min-width: $breakpoint__tablet) {
+            flex-basis: 40%;
+        }
+    }
+    .about__btn {
+        text-align: center;
+        & a {
+            @include cart-btn;
+        }
+        @media (min-width: $breakpoint__tablet) {
+            text-align: left;
+            margin-left: 3rem;
+        } 
+    }
+}

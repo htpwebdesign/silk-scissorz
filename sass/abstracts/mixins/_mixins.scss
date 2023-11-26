@@ -19,7 +19,7 @@
   padding: 0 1rem;
 }
 @mixin cta-btn {
-  font-size: 1.25rem;
+  font-size: .75rem;
   font-family: $font__heading;
   text-decoration: none;
   text-transform: uppercase;
@@ -27,12 +27,20 @@
   color: $color__darkgray;
   border: 1px solid $color__darkgray;
   border-radius: 8px;
-  padding: 0.6rem 1.25rem;
+  padding: .3rem .5rem;
   transition: background-color 0.3s ease, color 0.3s ease;
   &:hover {
     background-color: $color__darkgray;
     border: 1px solid $color__pink;
     color: $color__pink;
+  }
+  @media screen and (min-width: $breakpoint__tablet) {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+  @media screen and (min-width: $breakpoint__desktop) {
+    font-size: 1.25rem;
+    padding: 0.6rem 1.25rem;
   }
 }
 
@@ -52,6 +60,10 @@
     border: none;
     color: $color__darkgray;
   }
+  @media screen and (max-width: $breakpoint__mobile) {
+    font-size: 1rem;
+    padding: .4rem .7rem;
+}
 }
 
 @mixin grid-layout($gap: 2rem) {
