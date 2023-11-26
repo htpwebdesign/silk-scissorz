@@ -1,3 +1,5 @@
+
+
 .services-container {
     @include padding-side;
 
@@ -15,9 +17,9 @@
 
     /* Style the service table */
     table {
-        width: 100%;
+        // width: 100%;
         border-collapse: collapse;
-        margin-top: 20px;
+        // margin-top: 20px;
 
         /* Style the table headings */
         thead th {
@@ -30,27 +32,29 @@
         /* Style the table body */
         tbody td {
             padding: 10px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid $color__lightgray;
         }
 
         /* Style alternating rows */
         tbody tr:nth-child(even) {
             background-color: #f9f9f9;
         }
+
+        // Responsive Styles
+        @media (min-width: $breakpoint__tablet) {
+
+            thead th,
+            tbody td {
+                padding: 10px;
+
+            }
+        }
+
+        @media (min-width: $breakpoint__desktop) {
+            .service-links {
+                flex-direction: row;
+
+            }
+        }
     }
 }
-
-/* Style the "See All Products" link */
-// .products a {
-//     display: inline-block;
-//     margin-top: 20px;
-//     padding: 10px 20px;
-//     background-color: #0066cc;
-//     color: #fff;
-//     text-decoration: none;
-//     border-radius: 5px;
-// }
-
-// .products a:hover {
-//     background-color: #004080;
-// }
