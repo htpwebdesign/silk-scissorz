@@ -69,7 +69,7 @@
 			<?php
 			if (has_nav_menu('header-submenu')) :
 			?>
-				<!-- <nav class="secondary-navigation">
+				<nav class="secondary-navigation">
 					<?php
 					wp_nav_menu(
 						array(
@@ -78,7 +78,7 @@
 						)
 					);
 					?>
-				</nav> -->
+				</nav>
 			<?php
 			endif;
 			?>

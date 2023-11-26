@@ -4,10 +4,50 @@
   position: relative;
   z-index: 100;
   align-items: center;
+  padding: 0 2rem;
 
   .site-branding {
-    width: 25%;
-    max-width: 30%;
-    min-width: 20%;
+    img {
+      width: 100%;
+      max-width: 150px;
+      min-width: 150px;
+      height: 60px;
+      display: block;
+
+      @media screen and (min-width: $breakpoint__tablet) {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  .secondary-navigation {
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-grow: 1;
+      gap: 0.8rem;
+
+      li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          svg {
+            fill: $color__link-visited;
+          }
+        }
+      }
+    }
+    // .secondary-navigation__item {
+    //   margin-left: 1rem;
+    // }
   }
 }

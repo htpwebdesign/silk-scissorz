@@ -7,6 +7,9 @@
 (function () {
   const siteNavigation = document.getElementById("site-navigation");
 
+  // Define media query
+  const mql = window.matchMedia("(min-width: 48em)");
+
   // Return early if the navigation doesn't exist.
   if (!siteNavigation) {
     return;
@@ -51,6 +54,15 @@
       button.setAttribute("aria-expanded", "false");
     }
   });
+
+  // Add the event listener to the MediaQueryList object
+  mql.addEventListener("change", removeTransition);
+  function removeTransition(e) {
+    if (e.matches) {
+      siteNavigation.classList.remove("toggled");
+      button.setAttribute("aria-expanded", "false");
+    }
+  }
 
   // Get all the link elements within the menu.
   const links = menu.getElementsByTagName("a");
