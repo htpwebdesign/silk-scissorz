@@ -41,9 +41,9 @@ get_header();
 								?>
 									<div class="swiper-slide swiper-hero">
 										<div class="slide-content">
-											
-												<?php echo wp_get_attachment_image($sub_image, 'full'); ?>
-											
+
+											<?php echo wp_get_attachment_image($sub_image, 'full'); ?>
+
 											<!-- hero section CTA button -->
 											<div class="hero-btn">
 												<a href="<?php echo esc_url($sub_link); ?>"><?php echo $sub_button_text; ?></a>
@@ -128,7 +128,7 @@ get_header();
 					?>
 						<article>
 							<a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))) . '#service-' . get_the_ID(); ?>">
-								<?php the_post_thumbnail('medium'); ?>
+								<?php the_post_thumbnail('medium_large'); ?>
 								<h3><?php the_title() ?></h3>
 							</a>
 						</article>
