@@ -1,0 +1,44 @@
+.blog {
+  .site-main {
+    @include grid-layout;
+    @include padding-side;
+
+    header {
+      grid-column: 1 / -1;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+
+      header {
+        order: 1;
+        h2 {
+          font-size: $font__size-h2;
+          margin: 0;
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+
+      img {
+        height: 300px;
+        display: block;
+        // max-height: 300px;
+        // min-height: 200px;
+        object-fit: cover;
+      }
+
+      .entry-meta {
+        text-align: right;
+        margin: 0.5rem;
+      }
+
+      .entry-content {
+        order: 2;
+        margin: 0;
+      }
+    }
+  }
+}

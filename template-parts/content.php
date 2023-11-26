@@ -18,19 +18,20 @@
 		else :
 			the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
 		endif;
-
-		if ('post' === get_post_type()) :
 		?>
-			<div class="entry-meta">
-				<?php
-				silk_scissorz_posted_on();
-				silk_scissorz_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php silk_scissorz_post_thumbnail(); ?>
+	<?php silk_scissorz_post_thumbnail();
+	if ('post' === get_post_type()) :
+	?>
+		<div class="entry-meta">
+			<?php
+			silk_scissorz_posted_on();
+			silk_scissorz_entry_footer();
+			// silk_scissorz_posted_by();
+			?>
+		</div><!-- .entry-meta -->
+	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php
@@ -47,7 +48,7 @@
 				if ($featured_posts) :
 		?>
 					<section class="related-products">
-						<h2>Related Products</h2>
+						<h2 class="related-products-heading">Related Products</h2>
 						<div class="related-products-wrapper">
 							<?php
 							foreach ($featured_posts as $post) :
@@ -91,8 +92,9 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-
+	<!-- 
 	<footer class="entry-footer">
 		<?php silk_scissorz_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	</footer> -->
+	<!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

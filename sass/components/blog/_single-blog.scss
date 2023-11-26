@@ -1,0 +1,30 @@
+.single-post {
+  .site-main {
+    @include padding-side;
+
+    article {
+      .entry-meta {
+        text-align: right;
+        margin: 0.5rem;
+      }
+
+      .entry-content {
+        .related-products {
+          margin-top: 5rem;
+
+          img {
+            width: 100%;
+          }
+
+          .related-products-wrapper {
+            @include grid-layout;
+          }
+        }
+      }
+    }
+
+    .post-navigation {
+      margin: 2rem 0 5rem;
+    }
+  }
+}
