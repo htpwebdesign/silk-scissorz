@@ -1,29 +1,43 @@
+.services-container {
+    @include padding-side;
 
+    /* Add any other styles specific to site-main */
 
-/* Style the service table */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
+    .service-links {
+        display: flex;
+        justify-content: center;
+        gap: 2em;
 
-/* Style the table headings */
-thead th {
-    background-color: #f2f2f2;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
-}
+        a {
+            text-decoration: none;
+        }
+    }
 
-/* Style the table body */
-tbody td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
+    /* Style the service table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
 
-/* Style alternating rows */
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+        /* Style the table headings */
+        thead th {
+            background-color: #EED5EB;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        /* Style the table body */
+        tbody td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Style alternating rows */
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    }
 }
 
 /* Style the "See All Products" link */
