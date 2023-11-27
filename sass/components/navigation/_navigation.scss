@@ -50,7 +50,6 @@
 
   li {
     position: relative;
-    //SELECT LAST CHILD AND LAST SECOND CHILD
     &:last-child,
     &:nth-last-child(2) {
       display: block;
