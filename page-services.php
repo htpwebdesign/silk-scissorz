@@ -76,8 +76,8 @@ get_header();
             wp_reset_postdata();
         endif
         ?>
-    <section class="products">
-        <a href="<?php echo wc_get_page_permalink('shop') ?>">See All Products</a>
+    <section class="products-all">
+        <a class="all-products-link" href="<?php echo wc_get_page_permalink('shop') ?>">See All Products</a>
         <?php
             echo do_shortcode('[products limit="3" columns="3" orderby="rand" category="services" cat_operator="NOT IN" class="random-products"]');
             ?>

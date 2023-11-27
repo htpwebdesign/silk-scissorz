@@ -5,25 +5,30 @@
 
     .service-links {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         text-align: center;
-        gap: 2em;
         border: 3px solid #EED5EB;
         margin: 0 auto;
         width: 50%;
         border-radius: 20px;
 
+        @media (min-width: $breakpoint__tablet) {
+            display: flex;
+            flex-direction: row;
+            gap: 2em;
+        }
+
         a {
             text-decoration: none;
-            margin: 1rem 0;
+            margin: 0.5rem 0;
         }
     }
 
     /* Style the service table */
     table {
-        // width: 100%;
+
         border-collapse: collapse;
-        // margin-top: 20px;
 
         /* Style the table headings */
         th {
@@ -57,12 +62,24 @@
 
             }
         }
-
-        @media (min-width: $breakpoint__desktop) {
-            .service-links {
-                flex-direction: row;
-
-            }
-        }
     }
+
+    .products-all {
+
+        .all-products-link {
+            display: block;
+            width: 100%;
+            text-align: right;
+            margin: 1rem 0;
+        }
+
+        .products {
+            @include grid-layout;
+
+
+
+        }
+
+    }
+
 }
