@@ -1,0 +1,29 @@
+.post-type-archive-product {
+  //sidebar
+  //ul(first layer)
+  .wc-block-product-categories-list--depth-0 {
+    margin: 0;
+    list-style-type: none;
+    margin-right: 2rem;
+
+    //li
+    .wc-block-product-categories-list-item {
+      padding: 0.5rem;
+      border-bottom: 2px solid $color__black;
+      &:hover {
+        background-color: $color__pink;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+    //ul (second layer)
+    .wc-block-product-categories-list--depth-1 {
+      list-style-type: none;
+      margin-left: 0;
+      .wc-block-product-categories-list-item {
+        border-color: transparent;
+      }
+    }
+  }
+}
