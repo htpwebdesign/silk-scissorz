@@ -140,5 +140,5 @@ get_header();
 <!-- this is just a random comment to make a commit on git -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
