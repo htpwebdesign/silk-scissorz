@@ -85,3 +85,18 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@mixin sale {
+  background: hotpink;
+  border: 1px solid #43454b;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  font-size: .875em;
+  font-weight: 600;
+  padding: 0.25em 0.75em;
+  text-align: center;
+  text-transform: uppercase;
+  width: auto;
+  z-index: 9;
+}

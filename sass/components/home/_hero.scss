@@ -65,6 +65,9 @@
     color: $color__pink!important;
     background-color: transparent;
     border: none;
+    &:hover {
+        color: $color__lightgray!important;
+    }
 }
 
 .swiper-pagination-bullet-active {
