@@ -1,11 +1,109 @@
 .single-product {
-
+	@include padding-side;
 	div.product {
 		position: relative;
-
+		// booking
+		.wc-bookings-booking-form-button {
+			@include cta-btn;
+			margin: 1rem 0;
+		}
+		.single_add_to_cart_button {
+			@include cart-btn;
+			margin: 1rem 0;
+		}
+		.wc-bookings-date-picker-timezone-block {
+			display: none;
+		}
+		.wc-bookings-date-picker {
+			margin-left: -.5rem;
+		}
+		.wc-bookings-date-picker .ui-datepicker td.bookable a {
+			background-color: $color__pink!important;
+			color: $color__black!important;
+		}
+		.wc-bookings-date-picker .ui-datepicker td.bookable-range .ui-state-default {
+			background-color: #912269!important;
+		}
+		.wc-bookings-booking-form .block-picker li a.selected {
+			background-color: #912269!important;
+		}
+		.wc-bookings-booking-form .block-picker li:nth-child(even) a:hover, .wc-bookings-booking-form .block-picker li:nth-child(even) a:focus,
+		.wc-bookings-booking-form .block-picker li:nth-child(odd) a:hover, .wc-bookings-booking-form .block-picker li:nth-child(odd) a:focus {
+			background-color: #912269!important;
+		}
+		// product unnecessary details 
+		.product_meta,
+		.description_tab,
+		.reviews_tab,
+		.woocommerce-tabs {
+			display: none;
+		}
+		// single product sale
+		.onsale {
+			background: hotpink;
+			border: 1px solid #43454b;
+			border-radius: 3px;
+			color: white;
+			display: inline-block;
+			font-size: .875em;
+			font-weight: 600;
+			left: auto;
+			padding: 0.25em 0.75em;
+			position: absolute;
+			top: 4px;
+			right: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			width: 70px;
+			z-index: 9;
+			@media screen and (min-width: 550px) {
+				left: 370px;
+			}
+			@media screen and (min-width: $breakpoint__tablet) {
+				left: 420px;
+			}
+			@media screen and (min-width: $breakpoint__desktop) {
+				left: 400px;
+				width: 90px;
+			}
+		}
+		@media screen and (min-width: $breakpoint__tablet) {
+		.summary {
+			display: grid;
+			padding-left: 1rem;
+			h1 {
+				margin: 0;
+			}
+		}
+		}
+		ul.products li.product a span.onsale {
+			background: hotpink;
+			border: 1px solid #43454b;
+			border-radius: 3px;
+			color: white;
+			display: inline-block;
+			font-size: .875em;
+			font-weight: 600;
+			left: auto;
+			padding: 0.25em 0.75em;
+			position: absolute;
+			top: 4px;
+			right: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			width: auto;
+			z-index: 9;
+		}
 		.woocommerce-product-gallery {
 			position: relative;
 			float: left;
+			img {
+				width: 450px;
+				
+				@media screen and (min-width: $breakpoint__tablet) {
+					width: 500px;
+				}
+			}
 
 			.woocommerce-product-gallery__trigger {
 				position: absolute;

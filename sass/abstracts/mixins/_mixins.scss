@@ -21,12 +21,13 @@
 @mixin cta-btn {
   font-size: .75rem;
   font-family: $font__heading;
+  font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
   background-color: $color__pink;
   color: $color__darkgray;
   border: 1px solid $color__darkgray;
-  border-radius: 8px;
+  border-radius: 5px;
   padding: .3rem .5rem;
   transition: background-color 0.3s ease, color 0.3s ease;
   &:hover {
@@ -45,14 +46,15 @@
 }
 
 @mixin cart-btn {
-  font-size: 1.25rem;
+  font-size: 0.75rem;
   font-family: $font__heading;
+  font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
   background-color: $color__darkgray;
   color: $color__pink;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 0.6rem 1.25rem;
   transition: background-color 0.3s ease, color 0.3s ease;
   &:hover {
@@ -60,10 +62,14 @@
     border: none;
     color: $color__darkgray;
   }
-  @media screen and (max-width: $breakpoint__mobile) {
+  @media screen and (min-width: $breakpoint__tablet) {
     font-size: 1rem;
-    padding: .4rem .7rem;
-}
+    padding: 0.8rem 1rem;
+  }
+  @media screen and (min-width: $breakpoint__desktop) {
+    font-size: 1.25rem;
+    padding: 1rem 1.25rem;
+  }
 }
 
 @mixin grid-layout($gap: 2rem) {
