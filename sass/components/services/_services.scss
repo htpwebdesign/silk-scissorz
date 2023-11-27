@@ -8,7 +8,7 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        border: 3px solid #EED5EB;
+        border: 3px solid $color_purple;
         margin: 0 auto;
         width: 50%;
         border-radius: 20px;
@@ -36,7 +36,7 @@
         }
 
         thead th {
-            background-color: #EED5EB;
+            background-color: $color_purple;
             padding: 10px;
             text-align: left;
             font-weight: bold;
