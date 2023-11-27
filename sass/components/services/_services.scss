@@ -26,6 +26,10 @@
         // margin-top: 20px;
 
         /* Style the table headings */
+        th {
+            width: 50%
+        }
+
         thead th {
             background-color: #EED5EB;
             padding: 10px;
