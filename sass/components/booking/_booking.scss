@@ -1,29 +1,26 @@
 .page-id-141 {
   .site-main {
     @include padding-side;
-    @include grid-layout;
-    margin-bottom: 5rem;
 
-    h1,
-    h1 + p {
-      grid-column: 1 / -1;
-      margin: 0 0 2rem;
-    }
+    .booking-product-section {
+      @include grid-layout;
+      padding: 4rem 0;
 
-    article {
-      text-align: center;
-      img {
-        width: 100%;
-        display: block;
-      }
+      article {
+        text-align: center;
+        img {
+          width: 100%;
+          display: block;
+        }
 
-      h2 {
-        margin: 0;
-        margin-bottom: 1rem;
-      }
+        h2 {
+          margin: 0;
+          margin-bottom: 1rem;
+        }
 
-      a {
-        @include cta-btn;
+        a {
+          @include cta-btn;
+        }
       }
     }
   }

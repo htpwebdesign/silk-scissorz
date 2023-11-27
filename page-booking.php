@@ -35,17 +35,24 @@ get_header();
 		// check if any products found
 		if (!empty($bookable_products)) :
 			// Loop through an array of the WC_Product objects
-			foreach ($bookable_products as $bookable_product) :
-				// Output stylists info
 		?>
-				<article>
-					<?php echo $bookable_product->get_image("woocommerce_single"); ?>
-					<h2><?php echo esc_html($bookable_product->get_name()); ?></h2>
-					<!-- <p><?php echo esc_html($bookable_product->get_short_description()); ?></p> -->
-					<a href="<?php echo esc_url($bookable_product->get_permalink()); ?>">Book Now</a>
-				</article>
+			<section class="booking-product-section">
+				<?php
+				foreach ($bookable_products as $bookable_product) :
+					// Output stylists info
+				?>
+
+					<article>
+						<?php echo $bookable_product->get_image("woocommerce_single"); ?>
+						<h2><?php echo esc_html($bookable_product->get_name()); ?></h2>
+						<!-- <p><?php echo esc_html($bookable_product->get_short_description()); ?></p> -->
+						<a href="<?php echo esc_url($bookable_product->get_permalink()); ?>">Book Now</a>
+					</article>
+				<?php
+				endforeach;
+				?>
+			</section>
 	<?php
-			endforeach;
 		endif;
 
 

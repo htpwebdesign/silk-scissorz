@@ -1,0 +1,68 @@
+.services-container {
+    @include padding-side;
+
+    /* Add any other styles specific to site-main */
+
+    .service-links {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        gap: 2em;
+        border: 3px solid #EED5EB;
+        margin: 0 auto;
+        width: 50%;
+        border-radius: 20px;
+
+        a {
+            text-decoration: none;
+            margin: 1rem 0;
+        }
+    }
+
+    /* Style the service table */
+    table {
+        // width: 100%;
+        border-collapse: collapse;
+        // margin-top: 20px;
+
+        /* Style the table headings */
+        th {
+            width: 50%
+        }
+
+        thead th {
+            background-color: #EED5EB;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        /* Style the table body */
+        tbody td {
+            padding: 10px;
+            border-bottom: 1px solid $color__lightgray;
+        }
+
+        /* Style alternating rows */
+        tbody tr:nth-child(even) {
+            background-color: $color__lightgray;
+        }
+
+        // Responsive Styles
+        @media (min-width: $breakpoint__tablet) {
+
+            thead th,
+            tbody td {
+                padding: 10px;
+
+            }
+        }
+
+        @media (min-width: $breakpoint__desktop) {
+            .service-links {
+                flex-direction: row;
+
+            }
+        }
+    }
+}
