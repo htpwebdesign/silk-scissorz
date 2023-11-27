@@ -1,0 +1,32 @@
+.page-id-15 {
+  @include padding-side;
+  .shop_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+    thead {
+      background-color: $color__pink;
+      th {
+        padding: 10px;
+        text-align: left;
+      }
+    }
+
+    tbody {
+        //general
+      tr {
+        &:nth-child(even) {
+          background-color: $color__beige;
+        }
+        td {
+          padding: 10px;
+          a{
+            text-decoration: none;
+          }
+        }
+      }
+      
+    }
+  }
+}
