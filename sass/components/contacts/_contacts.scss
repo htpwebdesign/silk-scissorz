@@ -1,4 +1,5 @@
 // Contact info
+.page-id-28{
 .contact__wrap {
     @include padding-side;
 }
@@ -97,4 +98,9 @@
             // font-size: 1.75rem;
         }
     }  
+}
+#gform_submit_button_1 {
+    @include cta-btn;
+}
+
 }
