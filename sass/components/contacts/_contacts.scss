@@ -3,14 +3,16 @@
     @include padding-side;
 }
 .contact__businesshours {
+    @media screen and (min-width: $breakpoint__tablet) {
     display: flex;  
     justify-content: space-evenly;
     align-items: flex-start;
+    }
 }
 .contact__info {
-    width: 50%;
+    font-size: .75rem;
     h2 {
-        font-size: 1.75rem;
+        // font-size: 1.25rem;
         margin: 0;
     }
     a {
@@ -20,14 +22,43 @@
     a:hover {
         color: $color__darkpink;
     }
+    @media screen and (min-width: $breakpoint__tablet) {
+        font-size: 1rem;
+        h2 {
+            // font-size: 1.5rem;
+        }
+    }
+    @media screen and (min-width: $breakpoint__desktop) {
+        h2 {
+            // font-size: 1.75rem;
+        }
+    }
 }
 .business__info {
-    width: 50%;
-    text-align: center;
+    font-size: .75rem;
+    text-align: left;
+    table {
+        width: 300px;
+        }
     caption {
+    text-align: left;
     font-family: $font__heading;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: bold;
+    }
+    @media screen and (min-width: $breakpoint__tablet) {
+        font-size: 1rem;
+        table {
+            width: 400px;
+            }
+        caption {
+        font-size: 1.5rem;
+        }
+    }
+    @media screen and (min-width: $breakpoint__desktop) {
+        caption {
+        font-size: 1.75rem;
+        }
     }
 }
 .gform_wrapper {
@@ -50,10 +81,20 @@
 }
 .map__section {
     h2 {
-        font-size: 1.75rem;
+        // font-size: 1.25rem;
         margin-bottom: 0;
     }
     p {
         margin-top: 0;
     }
+    @media screen and (min-width: $breakpoint__tablet) {
+        h2 {
+            // font-size: 1.5rem;
+        }
+    }
+    @media screen and (min-width: $breakpoint__desktop) {
+        h2 {
+            // font-size: 1.75rem;
+        }
+    }  
 }

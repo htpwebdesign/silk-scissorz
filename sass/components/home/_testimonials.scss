@@ -1,34 +1,75 @@
 .testimonials {
     @include padding-side;
+    margin-bottom: 2rem;
 }
-
-.swiper-testimonials {
-    width: 80%;
+.swiper-testimonials-container {
     position: relative;
-
-.swiper-slide {
-    padding: 2rem;
-    h3 {
-        margin-top: 0;
+    width: 85%;
+    margin: 0 auto;
+    .testimonials__content {
+        background-color: $color__beige;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        padding: 0.5rem;
+        margin: 0 auto;
+        height: 100%;
+        width: 90%;
+        h3 {
+            font-size: 1rem;
+            margin-top: 0;
+        }
+        blockquote {
+            font-size: 0.75rem;
+        }
+        @media (min-width: $breakpoint__mobile) {
+            h3 {
+                font-size: 1.25rem;
+                margin-top: 0;
+            }
+            blockquote {
+                font-size: 1rem;
+            }
+        }
+        @media (min-width: $breakpoint__tablet) {
+            padding: 1.5rem;
+            width: 80%;
+            h3 {
+                font-size: 1.55rem;
+                margin-top: 0;
+            }
+            blockquote {
+                font-size: 1.25rem;
+            }
+        }
+    }
+    .swiper-button-next-t, 
+    .swiper-button-prev-t {
+        color: $color__pink!important;
+        // font-size: 16px;
+        top: 50%; 
+        transform: translateY(-50%);
+    }
+    .swiper-button-next-t::after,
+    .swiper-button-prev-t::after {
+        font-size: 20px;
+        line-height: 1;
+        @media (min-width: $breakpoint__tablet) {
+            font-size: 30px;
+        }
+    }
+    .swiper-button-prev-t {
+        left: -30px;
+    }
+    .swiper-button-next-t {
+        right: -30px;
+    }
+    .swiper-pagination-t {
+        position: absolute;
+        bottom: -20px!important;
+        text-align: center;
+        @media (min-width: $breakpoint__tablet) {
+            bottom: -30px!important;
+        }
     }
 }
-}
-
-.testimonials__content {
-    background-color: $color__beige;
-    article {
-        margin: 2rem;
-    }
-}
 
 
-.swiper-button-next-t, 
-.swiper-button-prev-t {
-    background-color: transparent;
-    border: none;
-    color: hotpink!important;
-}
-
-.swiper-pagination-t {
-    text-align: center;
-}

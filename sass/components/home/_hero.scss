@@ -1,55 +1,75 @@
-div.hero-btn a{
-    @include cta-btn;
+.site-description {
+    display: none;
 }
 .home__h1 {
     display: none;
 }
-
-.swiper-hero {
-    position: relative;
-
-    .swiper-wrapper {
-        .swiper-slide {
-            padding: 0;
+.swiper-hero-section {
+    .swiper-hero {
+        position: relative;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .swiper-img {
+            overflow: hidden;
+            img {
+                flex-shrink: 0;
+                width: 100%;
+                max-width: 1920px; 
+                min-width: 900px;
+                height: auto;
+                object-fit: cover;
+              }
+        }
+        .hero-message {
+            position: absolute;
+            bottom: 3%;
+            left: 3%;
+            padding: 2rem;
+            @media (min-width: $breakpoint__tablet) {
+                bottom: 10%;
+                left: 10%;
+            }
+            h3 {
+                color: $color__pink;
+                font-size: 1.5rem;
+                text-shadow:1px 1px 3px $color__black;
+                margin-bottom: 0;
+                @media (min-width: $breakpoint__tablet) {
+                    font-size: 2rem;
+                }
+                @media (min-width: $breakpoint__desktop) {
+                    font-size: 2.5rem;
+                }
+            }
+            p {
+                color: $color__pink;
+                font-family: lato;
+                font-size: .75rem; 
+                text-shadow:1px 1px 3px $color__black;
+                @media (min-width: $breakpoint__tablet) {
+                    font-size: 1rem;
+                }
+            }
+            a {
+                @include cta-btn;
+            }
         }
     }
 }
-.slide-content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-.hero-btn {
-    position: absolute;
-    bottom: 20%;
-    right: 20%;
-    padding: 1rem;
-}
-.swiper-hero > div {
-    width: 100%; /* Set to 100% of the viewport width */
-    height: 600px;
-    display: flex;
-    align-items: center;
-    img {
-        width: 100%;
-        height: auto;
-    }
-    // justify-content: center;
-  }
-.swiper-hero-h > div > img {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-  }
+
 .swiper-button-prev-h, 
 .swiper-button-next-h {
-    color: hotpink!important;
+    color: $color__pink!important;
     background-color: transparent;
     border: none;
 }
+
 .swiper-pagination-bullet-active {
-    background: hotpink!important;
+    background: $color__pink!important;
 }
+
 .swiper-pagination-h {
     text-align: center;
     margin-top: 1rem;

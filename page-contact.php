@@ -124,6 +124,7 @@ get_header();
         endwhile;
         ?>
   </div>
+</div>
     <section>
       <div class="contact__form">
         <?php the_content(); ?>
@@ -133,7 +134,7 @@ get_header();
 		endif;
 	endwhile; // end of the loop. 
 	?>
-</div>
+
 </main><!-- #main -->
 
 <!-- this is just a random comment to make a commit on git -->
