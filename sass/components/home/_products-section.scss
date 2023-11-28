@@ -1,7 +1,15 @@
 .home {
   .home-products {
     @include padding-side;
-    ul.products {
+
+    .all-products-link {
+      display: block;
+      width: 100%;
+      text-align: right;
+      margin: 1rem 0;
+    }
+
+    .products {
       @include grid-layout;
     }
   }
