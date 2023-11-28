@@ -1,6 +1,6 @@
 .about {
     @include padding-side;
-    margin: 2rem 0;
+    margin: 2rem 0 5rem 0;
     .about__wrap {
     @media (min-width: $breakpoint__tablet) {
         display: flex;
@@ -8,23 +8,28 @@
         align-items: center;
       }
     }
-    .about__content {
-        background-color: $color__beige;
+    .about__text {
+        background-color: $color__pink;
+        border-radius: 5px;
         margin: 1rem 0;
-        @media (min-width: $breakpoint__tablet) {
-            margin: 1rem;
-        }
         p {
             padding: 1.25rem;
             margin: 0;
-        }
-        @media (min-width: $breakpoint__mobile) {
-            p {
-                padding: 1.5rem;
+            @media (min-width: $breakpoint__mobile) {
+                    padding: 1.5rem;
+            }
+            @media (min-width: $breakpoint__desktop) {
+                    padding: 2rem;
             }
         }
+    }
+    .about__content {
         @media (min-width: $breakpoint__tablet) {
             flex-basis: 60%;
+            margin: 1rem;
+        }
+        @media (min-width: $breakpoint__desktop) {
+            flex-basis: 70%;
         }
     }
     .about__image {
@@ -35,9 +40,13 @@
         @media (min-width: $breakpoint__tablet) {
             flex-basis: 40%;
         }
+        @media (min-width: $breakpoint__desktop) {
+            flex-basis: 30%;
+        }
     }
     .about__btn {
         text-align: center;
+        margin: 2rem 0;
         & a {
             @include cart-btn;
         }
