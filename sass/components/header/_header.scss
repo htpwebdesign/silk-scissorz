@@ -7,6 +7,20 @@
   padding: 0.5rem 2rem;
 
   .site-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .site-title {
+      margin: 0;
+      font-size: $font__size-h3;
+      a {
+        text-decoration: none;
+        white-space: nowrap;
+        color: $color__black;
+      }
+    }
+
     img {
       width: 100%;
       max-width: 80px;

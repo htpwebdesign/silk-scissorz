@@ -15,9 +15,9 @@ const swiperTestimonials = new Swiper(".swiper-testimonials", {
   // Responsive breakpoints
   breakpoints: {
     768: {
-        slidesPerView: 2,
-    }
-  }
+      slidesPerView: 2,
+    },
+  },
 });
 
 // Hero Swiper

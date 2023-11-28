@@ -1,0 +1,8 @@
+.home {
+  .home-products {
+    @include padding-side;
+    ul.products {
+      @include grid-layout;
+    }
+  }
+}

@@ -33,7 +33,7 @@ function silk_scissorz_woocommerce_setup()
 			),
 		)
 	);
-	add_theme_support('wc-product-gallery-zoom');
+	// add_theme_support('wc-product-gallery-zoom');
 	add_theme_support('wc-product-gallery-lightbox');
 	add_theme_support('wc-product-gallery-slider');
 }
@@ -271,3 +271,10 @@ function update_bookable_product_taxonomies($post_id)
 }
 
 add_action('save_post', 'update_bookable_product_taxonomies');
+
+// Remove the sale flash from the product loop
+
+remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10);
+
+// Add the sale flash to the product thumbnail
+add_action('woocommerce_product_thumbnails', 'woocommerce_show_product_loop_sale_flash', 10);
