@@ -47,7 +47,7 @@ get_header();
 										</div>
 										<!-- hero section CTA button -->
 										<div class="hero-message">
-											<h3><?php echo $sub_title_text; ?></h3>
+											<h2><?php echo $sub_title_text; ?></h2>
 											<p><?php echo $sub_message_text; ?></p>
 											<div>
 												<a href="<?php echo esc_url($sub_link); ?>"><?php echo $sub_button_text; ?></a>
