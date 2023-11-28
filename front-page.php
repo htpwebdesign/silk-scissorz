@@ -135,22 +135,24 @@ get_header();
 			);
 			$services_query = new WP_Query($args);
 			if ($services_query->have_posts()) : ?>
-				<section class="home-services grid-system">
+				<section class="home-services">
 					<h2 class="section-heading">Our Services</h2>
-					<?php
-					while ($services_query->have_posts()) : $services_query->the_post();
-					?>
-						<article>
-							<a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))) . '#service-' . get_the_ID(); ?>">
-								<?php the_post_thumbnail('medium_large'); ?>
-								<h3><?php the_title() ?></h3>
-							</a>
-						</article>
+					<div class="product-container">
+						<?php
+						while ($services_query->have_posts()) : $services_query->the_post();
+						?>
+							<article>
+								<a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))) . '#service-' . get_the_ID(); ?>">
+									<?php the_post_thumbnail('medium_large'); ?>
+									<h3><?php the_title() ?></h3>
+								</a>
+							</article>
 
-					<?php
-					endwhile;
-					wp_reset_postdata();
-					?>
+						<?php
+						endwhile;
+						wp_reset_postdata();
+						?>
+					</div>
 					<a class="section-cta-link" href="<?php echo esc_url(get_page_link(24)) ?>">All Services</a>
 				</section>
 			<?php
@@ -160,7 +162,7 @@ get_header();
 
 
 			<section class="home-products">
-				<a href="<?php echo wc_get_page_permalink('shop') ?>">See All Products</a>
+				<a class="all-products-link" href="<?php echo wc_get_page_permalink('shop') ?>">See All Products</a>
 				<?php
 				/* === Products Section === */
 				echo do_shortcode('[products limit="3" columns="3" orderby="popularity" class="quick-sale" on_sale="true" ]');

@@ -1,7 +1,16 @@
 .home {
   .home-services {
-    article {
-      text-align: center;
+    @include padding-side;
+    text-align: center;
+    .product-container {
+      @include grid-layout;
+      article {
+        text-align: center;
+      }
+    }
+
+    .section-cta-link {
+      @include cta-btn;
     }
   }
 }
