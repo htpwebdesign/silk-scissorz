@@ -44,9 +44,22 @@
 		/* === Related Products or Posts Section === */
 		if (is_single()) :
 			if (function_exists('get_field')) :
+
+				// <!-- CTA button -->
+				if (get_field('cta') && get_field('cta_link')) :
+					$cta = get_field('cta');
+					$cta_link = get_field('cta_link');
+				?>
+				<section class="cta">
+					<a href="<?php echo esc_url($cta_link); ?>"><?php echo $cta; ?></a>
+				</section>
+				<?php
+				endif;
+
 				$featured_posts = get_field('single_post_products_section');
 				if ($featured_posts) :
 		?>
+
 					<section class="related-products">
 						<h2 class="related-products-heading">Related Products</h2>
 						<div class="related-products-wrapper">
