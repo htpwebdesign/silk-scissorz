@@ -1,7 +1,6 @@
 .page-id-15 {
   @include padding-side;
   //product-thumbnail
-
   .shop_table {
     width: 100%;
     border-collapse: collapse;
@@ -68,6 +67,10 @@
     //coupon code area
     .coupon {
       margin-bottom: 1rem;
+    }
+
+    #shipping_method {
+      list-style: none;
     }
   }
 
