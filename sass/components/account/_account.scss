@@ -1,0 +1,32 @@
+.page-id-17 {
+    @include padding-side;
+    .woocommerce {
+        @media screen and (min-width: $breakpoint__tablet) {
+            display: flex;
+        }
+    }
+    .woocommerce-MyAccount-navigation {
+        width: 20%;    
+        ul {
+        @media screen and (min-width: $breakpoint__tablet) {
+            margin: 0 2rem;
+        }
+       }
+    }
+    .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link a {
+        border-bottom: 1px solid rgba(0,0,0,.05);
+        text-decoration: none;
+        padding: 0.875em 0;
+        display: block;
+        color: $color__darkgray;
+    }
+    .woocommerce-MyAccount-content {
+        margin-top: 1rem;
+        @media screen and (min-width: $breakpoint__tablet) {
+            margin: 0 1rem;
+        }
+    }
+    .woocommerce-info {
+        background-color: $color__pink;
+    }
+}

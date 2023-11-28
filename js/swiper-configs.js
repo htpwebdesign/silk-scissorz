@@ -1,7 +1,7 @@
 // Testimonials Swiper
 const swiperTestimonials = new Swiper(".swiper-testimonials", {
   loop: true,
-  autoHeight: true,
+  autoHeight: false,
   pagination: {
     el: ".swiper-pagination-t",
     clickable: true,
