@@ -82,16 +82,16 @@
       }
       //coupon area
       .coupon {
-        display:flex;
+        display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        gap:1rem;
+        gap: 1rem;
       }
 
       .button[name="update_cart"] {
-        display:block;
-        position:absolute;
-        right: 4rem; 
+        display: block;
+        position: absolute;
+        right: 4rem;
       }
     }
   }
