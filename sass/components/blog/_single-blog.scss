@@ -27,4 +27,9 @@
       margin: 2rem 0 5rem;
     }
   }
+  .cta {
+    a{
+    @include cart-btn;
+    }
+  }
 }
