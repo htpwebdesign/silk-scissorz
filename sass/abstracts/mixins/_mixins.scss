@@ -19,7 +19,7 @@
   padding: 0 1rem;
 }
 @mixin cta-btn {
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-family: $font__heading;
   font-weight: bold;
   text-decoration: none;
@@ -28,7 +28,7 @@
   color: $color__darkgray;
   border: 1px solid $color__darkgray;
   border-radius: 5px;
-  padding: .3rem .5rem;
+  padding: 0.3rem 0.5rem;
   transition: background-color 0.3s ease, color 0.3s ease;
   &:hover {
     background-color: $color__darkgray;
@@ -83,5 +83,24 @@
 
   @media screen and (min-width: $breakpoint__tablet) {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@mixin sale-tag {
+  background-color: hotpink;
+  color: white;
+  font-size: 0.75rem;
+  font-family: $font__heading;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  @media screen and (min-width: $breakpoint__tablet) {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  @media screen and (min-width: $breakpoint__desktop) {
+    font-size: 1.25rem;
+    padding: 1rem 1.25rem;
   }
 }

@@ -42,17 +42,17 @@ get_header();
 									$sub_message_text = get_sub_field('message');
 								?>
 									<div class="swiper-slide swiper-hero">
-											<div class="swiper-img">
-												<?php echo wp_get_attachment_image($sub_image, 'full'); ?>
-											</div>
-											<!-- hero section CTA button -->
-											<div class="hero-message">
-												<h3><?php echo $sub_title_text; ?></h3>
-												<p><?php echo $sub_message_text; ?></p>
-												<div>
+										<div class="swiper-img">
+											<?php echo wp_get_attachment_image($sub_image, 'full'); ?>
+										</div>
+										<!-- hero section CTA button -->
+										<div class="hero-message">
+											<h3><?php echo $sub_title_text; ?></h3>
+											<p><?php echo $sub_message_text; ?></p>
+											<div>
 												<a href="<?php echo esc_url($sub_link); ?>"><?php echo $sub_button_text; ?></a>
-												</div>
 											</div>
+										</div>
 									</div>
 								<?php
 								endwhile; ?>
@@ -133,7 +133,7 @@ get_header();
 			);
 			$services_query = new WP_Query($args);
 			if ($services_query->have_posts()) : ?>
-				<section class="services grid-system">
+				<section class="home-services grid-system">
 					<h2 class="section-heading">Our Services</h2>
 					<?php
 					while ($services_query->have_posts()) : $services_query->the_post();
@@ -157,7 +157,7 @@ get_header();
 			?>
 
 
-			<section class="products">
+			<section class="home-products">
 				<a href="<?php echo wc_get_page_permalink('shop') ?>">See All Products</a>
 				<?php
 				/* === Products Section === */
@@ -184,22 +184,22 @@ get_header();
 						<div class="swiper  swiper-testimonials">
 							<div class="swiper-wrapper">
 								<?php
-									while ($testimonials_query->have_posts()) : $testimonials_query->the_post();
+								while ($testimonials_query->have_posts()) : $testimonials_query->the_post();
 									if (get_field('testimonials_text') && get_field('clients_name')) :
 										$testimonials_text = get_field('testimonials_text');
 										$clients_name = get_field('clients_name');
-										?>
-								<div class="swiper-slide swiper-slide-testimonials">
-									<article class="testimonials__content">
-										<h3><?php the_title(); ?></h3>
-										<blockquote>
-											<p><?php echo esc_html($testimonials_text) ?></p>
-											<cite><?php echo esc_html($clients_name) ?></cite>
-										</blockquote>
-									</article>
-								</div>
+								?>
+										<div class="swiper-slide swiper-slide-testimonials">
+											<article class="testimonials__content">
+												<h3><?php the_title(); ?></h3>
+												<blockquote>
+													<p><?php echo esc_html($testimonials_text) ?></p>
+													<cite><?php echo esc_html($clients_name) ?></cite>
+												</blockquote>
+											</article>
+										</div>
 								<?php
-								endif;
+									endif;
 								endwhile;
 								wp_reset_postdata();
 								?>

@@ -38,6 +38,12 @@
 --------------------------------------------- */
 @import "home/testimonials";
 
+/* Home Services
+--------------------------------------------- */
+@import "home/service-section";
+
+@import "home/products-section";
+
 /* Header
 --------------------------------------------- */
 @import "header/header";
@@ -80,4 +86,3 @@
 /* Cart
 --------------------------------------------- */
 @import "cart/cart";
-

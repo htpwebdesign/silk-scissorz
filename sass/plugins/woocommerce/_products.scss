@@ -12,14 +12,10 @@ ul.products {
       text-decoration: none;
 
       span.onsale {
+        @include sale-tag;
         position: absolute;
-        top: 0;
-        right: 0;
-        background-color: $color__pink;
-        padding: 0.5em;
-        color: $color__white;
-        font-size: 1.25rem;
-        font-weight: bold;
+        top: 2%;
+        right: 2%;
       }
 
       h2 {
