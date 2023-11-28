@@ -31,6 +31,7 @@ ul.products {
 
     .button {
       display: block;
+      @include cart-btn;
     }
   }
 }
@@ -38,7 +39,16 @@ ul.products {
 ul.products {
   //   @include padding-side;
   @include grid-layout;
+  li.product {
+    a[title="View cart"]{
+      @include cta-btn;
+      display: block;
+      margin-top:1rem;
+    }
+  }
 }
+
+
 
 // @media screen and (min-width: 48em) {
 //   ul.products {
