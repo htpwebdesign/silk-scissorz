@@ -124,6 +124,28 @@ get_header();
         endwhile;
         ?>
   </div>
+    <!-- FAQ -->
+    <section>
+    <?php if (get_field('faq_title') && get_field('faq_link') && get_field('faq_image')) :
+					$faq_title = get_field('faq_title');
+          $faq_link = get_field('faq_link');
+          $faq_image = get_field('faq_image');        
+		?>  
+      <div class="faq">
+        <div class="faq__content">
+          <h3><?php echo esc_html($faq_title) ?></h3>
+          <a href="<?php echo esc_url($faq_link); ?>">See FAQ</a>
+        </div>
+        <div class="faq__image">
+          <figure>
+            <?php echo wp_get_attachment_image($faq_image, 'full'); ?>
+          </figure>
+        </div>
+      </div>
+    <?php
+      endif;
+    ?>
+    </section>
 </div>
     <section>
       <div class="contact__form">

@@ -91,11 +91,13 @@ get_header();
 									</figure>
 								</div>
 								<div class="about__content">
-									<p><?php echo esc_html($about_us); ?></p>
+									<div class="about__text">
+										<p><?php echo esc_html($about_us); ?></p>
+									</div>
+									<div class="about__btn">
+										<a href="<?php the_permalink(); ?>">More about us</a>
+									</div>
 								</div>
-							</div>
-							<div class="about__btn">
-								<a href="<?php the_permalink(); ?>">About us</a>
 							</div>
 						</section>
 				<?php
