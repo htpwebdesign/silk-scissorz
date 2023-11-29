@@ -87,20 +87,16 @@
 }
 
 @mixin sale-tag {
-  background-color: hotpink;
+  background-color: #D50F7A;
   color: white;
   font-size: 0.75rem;
-  font-family: $font__heading;
+  font-family: $font__main;
   font-weight: bold;
+  border: 1px solid #43454b;
   text-transform: uppercase;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 1rem;
   border-radius: 5px;
-  @media screen and (min-width: $breakpoint__tablet) {
-    font-size: 1rem;
-    padding: 0.8rem 1rem;
-  }
   @media screen and (min-width: $breakpoint__desktop) {
     font-size: 1.25rem;
-    padding: 1rem 1.25rem;
   }
 }

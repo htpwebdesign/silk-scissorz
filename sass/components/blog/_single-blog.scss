@@ -1,6 +1,8 @@
 .single-post {
   .site-main {
     @include padding-side;
+    max-width: $width__content;
+    margin: 0 auto;
 
     article {
       .entry-meta {

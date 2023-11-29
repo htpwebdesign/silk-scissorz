@@ -223,7 +223,9 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $woocommerce__color-success;
+	// background-color: $woocommerce__color-success;
+	background-color: $color__pink;
+	margin-top: 1rem;
 	clear: both;
 }
 
@@ -234,7 +236,8 @@ p.no-comments {
 }
 
 .woocommerce-error {
-	background-color: $woocommerce__color-error;
+	// background-color: $woocommerce__color-error;
+	background-color: #FF6347;
 }
 
 .demo_store {
