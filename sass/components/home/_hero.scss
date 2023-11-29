@@ -1,9 +1,11 @@
 .site-description {
     display: none;
 }
+
 .home__h1 {
     display: none;
 }
+
 .swiper-hero-section {
     .swiper-hero {
         position: relative;
@@ -11,36 +13,44 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+
         .swiper-img {
             overflow: hidden;
+
             img {
                 flex-shrink: 0;
                 width: 100%;
-                max-width: 1920px; 
+                max-width: 1920px;
                 min-width: 900px;
                 height: auto;
                 object-fit: cover;
-              }
+            }
         }
+
         .hero-message {
             position: absolute;
             bottom: 3%;
             left: 3%;
             padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.2);
+
             @media (min-width: $breakpoint__tablet) {
                 bottom: 10%;
                 left: 7%;
             }
+
             h2 {
                 color: $color__white;
-                text-shadow:1px 1px 3px $color__black;
+                text-shadow: 1px 1px 3px $color__black;
                 margin-bottom: 0;
             }
+
             p {
                 color: $color__white;
                 font-family: $font__main;
-                text-shadow:1px 1px 3px $color__black;
+                text-shadow: 1px 1px 3px $color__black;
             }
+
             a {
                 @include cta-btn;
             }
@@ -48,22 +58,23 @@
     }
 }
 
-.swiper-button-prev-h, 
+.swiper-button-prev-h,
 .swiper-button-next-h {
-    color: $color__pink!important;
+    color: $color__pink !important;
     background-color: transparent;
     border: none;
+
     &:hover {
-        color: $color__lightgray!important;
+        color: $color__lightgray !important;
     }
 }
 
+
 .swiper-pagination-bullet-active {
-    background: $color__pink!important;
+    background: $color__pink !important;
 }
 
 .swiper-pagination-h {
     text-align: center;
     margin-top: 1rem;
 }
-

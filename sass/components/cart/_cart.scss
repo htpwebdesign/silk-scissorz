@@ -1,19 +1,19 @@
 .page-id-15 {
   @include padding-side;
+  //product-thumbnail
   .shop_table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 
-    .button{
-        @include cart-btn;
+    .button {
+      @include cart-btn;
     }
-    thead {
-      background-color: $color__darkpink;
-      th {
-        padding: 10px;
-        text-align: left;
-        color: $color__white;
+
+    .product-thumbnail {
+      img {
+        display: block;
+        margin: 0 auto;
       }
     }
 
@@ -21,18 +21,13 @@
       //general table
       tr {
         &:nth-child(even) {
-          background-color: $color__darkpink;
+          background-color: $color__purple;
           opacity: 0.8;
-          color:$color__white;
-          .product-remove a{
+          .product-remove a {
             background-color: $color__white;
-            color: $color__darkpink;
           }
-          .product-name a{
-            color: $color__white;
-          }
-
         }
+
         td {
           padding: 10px;
           a {
@@ -48,21 +43,58 @@
       }
       //remove
       .product-remove {
+        padding-top: 1rem;
         a {
-          background-color: $color__darkpink;
+          background-color: $color__purple;
           padding: 10px;
           border-radius: 10%;
-          color: $color__white; 
+          color: $color__black;
         }
       }
       //product name
       .product-name {
         a {
           color: $color__black;
-          &:nth-child(even) {
-            color: $color__white;
-          }
         }
+      }
+      //product-thumbnail
+      .product-thumbnail {
+        &::before {
+          display: none;
+        }
+      }
+    }
+    //coupon code area
+    .coupon {
+      margin-bottom: 1rem;
+    }
+
+    #shipping_method {
+      list-style: none;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint__tablet) {
+    .shop_table {
+      thead {
+        background-color: $color__purple;
+        th {
+          padding: 10px;
+          text-align: left;
+        }
+      }
+      //coupon area
+      .coupon {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 1rem;
+      }
+
+      .button[name="update_cart"] {
+        display: block;
+        position: absolute;
+        right: 4rem;
       }
     }
   }
