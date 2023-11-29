@@ -1,0 +1,10 @@
+.tax-product_cat {
+    .site-main {
+        @include padding-side;
+        margin: 2rem 0;
+    }
+
+    .woocommerce-ordering {
+        padding-bottom: 2rem;
+    }
+}
