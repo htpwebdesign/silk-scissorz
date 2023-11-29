@@ -31,6 +31,8 @@ ul.products {
 
     .button {
       display: block;
+      max-width: 70%;
+      margin: 0 auto;
       @include cart-btn;
     }
   }
@@ -39,12 +41,25 @@ ul.products {
 ul.products {
   //   @include padding-side;
   @include grid-layout;
+
   li.product {
-    a[title="View cart"]{
+    a[title="View cart"] {
       @include cta-btn;
       display: block;
-      margin-top:1rem;
+      margin-top: 1rem;
+      padding: 0.6rem 1.25rem;
+
+      @media screen and (min-width: $breakpoint__tablet) {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+      }
+
+      @media screen and (min-width: $breakpoint__desktop) {
+        font-size: 1.25rem;
+        padding: 1rem 1.25rem;
+      }
     }
+
   }
 }
 
