@@ -1,5 +1,7 @@
 .page-id-15 {
   @include padding-side;
+
+
   //product-thumbnail
   .shop_table {
     width: 100%;
@@ -18,11 +20,13 @@
     }
 
     tbody {
+
       //general table
       tr {
         &:nth-child(even) {
           background-color: $color__purple;
           opacity: 0.8;
+
           .product-remove a {
             background-color: $color__white;
           }
@@ -30,20 +34,24 @@
 
         td {
           padding: 10px;
+
           a {
             text-decoration: none;
           }
         }
       }
+
       //product thumbnail
       .product-thumbnail {
         img {
           border-radius: 30px;
         }
       }
+
       //remove
       .product-remove {
         padding-top: 1rem;
+
         a {
           background-color: $color__purple;
           padding: 10px;
@@ -51,12 +59,14 @@
           color: $color__black;
         }
       }
+
       //product name
       .product-name {
         a {
           color: $color__black;
         }
       }
+
       //product-thumbnail
       .product-thumbnail {
         &::before {
@@ -64,6 +74,7 @@
         }
       }
     }
+
     //coupon code area
     .coupon {
       margin-bottom: 1rem;
@@ -72,17 +83,27 @@
     #shipping_method {
       list-style: none;
     }
+
   }
+
+  .checkout-button {
+    @include cart-btn;
+
+  }
+
+
 
   @media screen and (min-width: $breakpoint__tablet) {
     .shop_table {
       thead {
         background-color: $color__purple;
+
         th {
           padding: 10px;
           text-align: left;
         }
       }
+
       //coupon area
       .coupon {
         display: flex;
