@@ -2,64 +2,81 @@
     @include padding-side;
     margin-bottom: 8rem;
 }
+
 .swiper-testimonials-container {
     position: relative;
     width: 85%;
     margin: 0 auto;
+
     .testimonials__content {
         background-color: $color__beige;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         padding: 0.5rem;
         margin: 0 auto;
         // height: 280px;
         overflow: auto;
         width: 90%;
+
         h3 {
             margin-top: 0;
         }
+
         @media (min-width: $breakpoint__mobile) {
             h3 {
                 margin-top: 0;
             }
         }
+
         @media (min-width: $breakpoint__tablet) {
             padding: 1.5rem;
             width: 80%;
             height: 100%;
+
             h3 {
                 margin-top: 0;
             }
         }
     }
-    .swiper-button-next-t, 
+
+    .swiper-pagination-bullet {
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+
+    .swiper-button-next-t,
     .swiper-button-prev-t {
-        color: $color__pink!important;
+        color: $color__pink !important;
+
         &:hover {
-            color: $color__lightgray!important;
+            color: $color__lightgray !important;
         }
     }
+
     .swiper-button-next-t::after,
     .swiper-button-prev-t::after {
         font-size: 20px;
         line-height: 1;
+
         @media (min-width: $breakpoint__tablet) {
             font-size: 30px;
         }
     }
+
     .swiper-button-prev-t {
         left: -30px;
     }
+
     .swiper-button-next-t {
         right: -30px;
     }
+
     .swiper-pagination-t {
         position: absolute;
-        bottom: -20px!important;
+        bottom: -20px !important;
         text-align: center;
+
         @media (min-width: $breakpoint__tablet) {
-            bottom: -30px!important;
+            bottom: -30px !important;
         }
     }
 }
-
-
