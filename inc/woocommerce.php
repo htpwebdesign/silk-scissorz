@@ -278,3 +278,21 @@ remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_pro
 
 // Add the sale flash to the product thumbnail
 add_action('woocommerce_product_thumbnails', 'woocommerce_show_product_loop_sale_flash', 10);
+
+/**
+ * Change number of upsells output
+ */
+add_filter( 'woocommerce_upsell_display_args', 'wc_change_number_related_products', 20 );
+
+function wc_change_number_related_products( $args ) {
+ 
+ $args['posts_per_page'] = 3;
+ $args['columns'] = 3; //change number of upsells here
+ return $args;
+}
+
+add_filter('woocommerce_cross_sells_total', 'change_cross_sells_total');
+
+function change_cross_sells_total($total) {
+    return 3; // Adjust the total number of cross-sells as needed
+}

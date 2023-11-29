@@ -1,10 +1,9 @@
 .single-product {
   @include padding-side;
-
-  .site-main {
-    margin: 2rem 0;
+  .site-main{
+    max-width: $width__content;
+    margin: 0 auto;
   }
-
   div.product {
     position: relative;
 
@@ -59,35 +58,8 @@
     .onsale {
       @include sale-tag;
       position: absolute;
-      top: 2%;
-      right: 2%;
-
-      //   background: hotpink;
-      //   border: 1px solid #43454b;
-      //   border-radius: 3px;
-      //   color: white;
-      //   display: inline-block;
-      //   font-size: 0.875em;
-      //   font-weight: 600;
-      //   left: auto;
-      //   padding: 0.25em 0.75em;
-      //   position: absolute;
-      //   top: 4px;
-      //   right: 20px;
-      //   text-align: center;
-      //   text-transform: uppercase;
-      //   width: 70px;
-      //   z-index: 9;
-      //   @media screen and (min-width: 550px) {
-      //     left: 370px;
-      //   }
-      //   @media screen and (min-width: $breakpoint__tablet) {
-      //     left: 420px;
-      //   }
-      //   @media screen and (min-width: $breakpoint__desktop) {
-      //     left: 400px;
-      //     width: 90px;
-      //   }
+      top: 10px;
+      left: 10px;
     }
 
     @media screen and (min-width: $breakpoint__tablet) {
@@ -102,26 +74,10 @@
     }
 
     ul.products li.product a span.onsale {
-      // background: hotpink;
-      // border: 1px solid #43454b;
-      // border-radius: 3px;
-      // color: white;
-      // display: inline-block;
-      // font-size: 0.875em;
-      // font-weight: 600;
-      // left: auto;
-      // padding: 0.25em 0.75em;
-      // position: absolute;
-      // top: 4px;
-      // right: 20px;
-      // text-align: center;
-      // text-transform: uppercase;
-      // width: auto;
-      // z-index: 9;
       @include sale-tag;
       position: absolute;
       top: 2%;
-      right: 2%;
+      left: 2%;
     }
 
     .woocommerce-product-gallery {
@@ -151,9 +107,11 @@
       .flex-control-thumbs {
         margin: 0;
         padding: 0;
+        width: 50%;
 
         li {
           list-style: none;
+          gap: 1rem;
           cursor: pointer;
           float: left;
 

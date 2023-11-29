@@ -88,7 +88,7 @@
     }
     }
     .gform_wrapper {
-        max-width: 1000px;
+        max-width: $width__content;
         margin: 0 auto 3rem auto;
         padding: 0 3rem;
 
@@ -96,5 +96,10 @@
     #gform_submit_button_1 {
         @include cta-btn;
     }
-
+    .site-footer .contact-section {
+        display: none;
+    }
+    .map-section {
+        display: none;
+    }
 }
