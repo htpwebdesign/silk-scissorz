@@ -2,79 +2,85 @@
   @include padding-side;
 
   //sidebar
- 
-    .products {
-      @include grid-layout;
-    }
-    .woocommerce-ordering {
-      margin-bottom: 1rem;
+
+  .products {
+    @include grid-layout;
+  }
+
+  .woocommerce-ordering {
+    margin-bottom: 1rem;
+  }
+
+  //ul(first layer)
+  .wc-block-product-categories-list--depth-0 {
+    margin: 0;
+    list-style-type: none;
+    margin-right: 2rem;
+    margin-top: 13rem;
+
+    //li
+    .wc-block-product-categories-list-item {
+      padding: 0.5rem;
+      border-bottom: 2px solid $color__black;
+
+      &:hover {
+        background-color: $color__pink;
+      }
+
+      a {
+        text-decoration: none;
+      }
     }
 
-    //ul(first layer)
-    .wc-block-product-categories-list--depth-0 {
-      margin: 0;
+    //ul (second layer)
+    .wc-block-product-categories-list--depth-1 {
       list-style-type: none;
-      margin-right: 2rem;
-      margin-top: 13rem;
+      margin-left: 0;
 
-      //li
       .wc-block-product-categories-list-item {
-        padding: 0.5rem;
-        border-bottom: 2px solid $color__black;
-        &:hover {
-          background-color: $color__pink;
-        }
-        a {
-          text-decoration: none;
-        }
-      }
-      //ul (second layer)
-      .wc-block-product-categories-list--depth-1 {
-        list-style-type: none;
-        margin-left: 0;
-        .wc-block-product-categories-list-item {
-          border-color: transparent;
-        }
-      }
-    }
-
-    //product pages number
-    .woocommerce-pagination {
-      ul.page-numbers {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 5rem;
-        align-items: center;
-        li {
-          margin-right: 5px;
-          &:last-child {
-            margin-right: 0;
-          }
-
-          a {
-            display: inline-block;
-            padding: 5px 10px;
-            text-decoration: none;
-            border: 1px solid $color__background-hr;
-            border-radius: 4px;
-            color: $color__darkgray;
-
-            &:hover {
-              background-color: $color__pink;
-            }
-          }
-
-          span.current {
-            border: 1px solid $color__background-hr;
-            border-radius: 4px;
-            padding: 5px 10px;
-            background-color: #333;
-            color: $color__white;
-          }
-        }
+        border-color: transparent;
       }
     }
   }
 
+  //product pages number
+  .woocommerce-pagination {
+    ul.page-numbers {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 5rem;
+      align-items: center;
+
+      li {
+        margin-right: 5px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          display: inline-block;
+          padding: 5px 10px;
+          text-decoration: none;
+          border: 1px solid $color__background-hr;
+          border-radius: 4px;
+          color: $color__darkgray;
+
+          &:hover {
+            background-color: $color__pink;
+          }
+        }
+
+        span.current {
+          border: 1px solid $color__background-hr;
+          border-radius: 4px;
+          padding: 5px 10px;
+          background-color: #333;
+          color: $color__white;
+        }
+      }
+    }
+  }
+}
