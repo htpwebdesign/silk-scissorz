@@ -1,5 +1,9 @@
 .single-product {
   @include padding-side;
+  .site-main{
+    max-width: $width__content;
+    margin: 0 auto;
+  }
   div.product {
     position: relative;
     // booking
@@ -47,9 +51,10 @@
     .onsale {
       @include sale-tag;
       position: absolute;
-      top: 2%;
-      right: 2%;
+      top: 10px;
+      left: 10px;
     }
+
     @media screen and (min-width: $breakpoint__tablet) {
       .summary {
         display: grid;
@@ -63,7 +68,7 @@
       @include sale-tag;
       position: absolute;
       top: 2%;
-      right: 2%;
+      left: 2%;
     }
     .woocommerce-product-gallery {
       position: relative;
@@ -91,9 +96,11 @@
       .flex-control-thumbs {
         margin: 0;
         padding: 0;
+        width: 50%;
 
         li {
           list-style: none;
+          gap: 1rem;
           cursor: pointer;
           float: left;
 

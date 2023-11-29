@@ -5,9 +5,9 @@
 
     .woocommerce {
         display: flex;
+        // justify-content: center;
     }
     .woocommerce-MyAccount-navigation {
-        width: 20%;    
         ul {
         @media screen and (min-width: $breakpoint__tablet) {
             margin: 0 2rem;
@@ -27,16 +27,10 @@
             background-color: $color__pink;
         }
     }
-    .u-columns {
-        @media screen and (min-width: $breakpoint__tablet) {
-            display: flex;
-            gap: 2rem;
-        }
-    }
-    .u-columns > * {
-        @media screen and (min-width: $breakpoint__tablet) {
-            flex: 1;
-            max-width: 50%;
-        }
-    }
+    // .u-columns {
+    //     @media screen and (min-width: $breakpoint__tablet) {
+    //         // display: flex;
+    //         gap: 2rem;
+    //     }
+    // }
 }
