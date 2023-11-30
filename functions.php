@@ -281,3 +281,17 @@ function custom_dashboard_fun() {
     	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
 	}
 	add_action( 'wp_dashboard_setup', 'wporg_remove_all_dashboard_metaboxes' );
+
+	function my_login_logo() { ?>
+		<style type="text/css">
+			#login h1 a, .login h1 a {
+				background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/sas-favicon-purple.png);
+			height:140px;
+			width:140px;
+			background-size: 140px 140px;
+			background-repeat: no-repeat;
+				padding-bottom: 30px;
+			}
+		</style>
+	<?php }
+	add_action( 'login_enqueue_scripts', 'my_login_logo' );
