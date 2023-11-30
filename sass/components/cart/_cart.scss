@@ -1,6 +1,7 @@
 .page-id-15 {
   @include padding-side;
-
+  max-width: $width__content;
+  margin: 0 auto;
 
   //product-thumbnail
   .shop_table {
@@ -16,6 +17,7 @@
       img {
         display: block;
         margin: 0 auto;
+        width: 150px;
       }
     }
 
@@ -94,6 +96,7 @@
 
   @media screen and (min-width: $breakpoint__tablet) {
     .shop_table {
+      position: relative;
       thead {
         background-color: $color__purple;
 
@@ -114,7 +117,7 @@
       .button[name="update_cart"] {
         display: block;
         position: absolute;
-        right: 4rem;
+        right: 1rem;
       }
     }
   }
