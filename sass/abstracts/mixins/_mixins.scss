@@ -20,7 +20,7 @@
 
 @mixin cta-btn {
   font-size: 0.75rem;
-  font-family: $font__heading;
+  font-family: $font__main;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
@@ -52,7 +52,7 @@
 
 @mixin cart-btn {
   font-size: 0.75rem;
-  font-family: $font__heading;
+  font-family: $font__main;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;

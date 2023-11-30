@@ -62,6 +62,15 @@
       left: 10px;
     }
 
+    // color for message
+    .woocommerce-notices-wrapper {
+    .woocommerce-message {
+      p {
+        background-color: $color__pink!important;
+      }
+    }
+  }
+
     @media screen and (min-width: $breakpoint__tablet) {
       .summary {
         display: grid;
@@ -158,7 +167,7 @@
   }
 
   &.in-stock {
-    color: $woocommerce__color-success;
+    color: tomato;
   }
 
   &.out-of-stock {
