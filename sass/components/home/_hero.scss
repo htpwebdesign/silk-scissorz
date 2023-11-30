@@ -30,8 +30,9 @@
         .hero-message {
             position: absolute;
             bottom: 3%;
-            left: 3%;
-            padding: 2rem;
+            left: 5%;
+            padding: .75rem;
+            margin: 1rem;
             background-color: rgba(0, 0, 0, 0.2);
 
             @media (min-width: $breakpoint__tablet) {
@@ -42,7 +43,7 @@
             h2 {
                 color: $color__white;
                 text-shadow: 1px 1px 3px $color__black;
-                margin-bottom: 0;
+                margin: 0;
             }
 
             p {
@@ -56,25 +57,32 @@
             }
         }
     }
-}
-
-.swiper-button-prev-h,
-.swiper-button-next-h {
-    color: $color__pink !important;
-    background-color: transparent;
-    border: none;
-
-    &:hover {
-        color: $color__lightgray !important;
-    }
-}
-
-
-.swiper-pagination-bullet-active {
-    background: $color__pink !important;
-}
-
-.swiper-pagination-h {
-    text-align: center;
-    margin-top: 1rem;
+        .swiper-button-prev-h,
+        .swiper-button-next-h {
+            color: $color__pink !important;
+            background-color: transparent;
+            border: none;
+        
+            &:hover {
+                color: $color__lightgray !important;
+            }
+        }
+        .swiper-button-prev-h:after,
+        .swiper-button-next-h:after {
+            font-size: 20px;
+            line-height: 1;
+        
+            @media (min-width: $breakpoint__tablet) {
+                font-size: 30px;
+            }
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: $color__pink !important;
+        }
+        
+        .swiper-pagination-h {
+            text-align: center;
+            bottom: -5px !important;
+        }
 }
