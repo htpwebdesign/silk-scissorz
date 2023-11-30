@@ -8,6 +8,13 @@
       margin-top: 7rem;
     }
   }
+  h1 {
+    text-align: center;
+    @media screen and (min-width: $breakpoint__mobile) {
+      text-align: left;
+    }
+
+  }
   //product-thumbnail
   .shop_table {
     width: 100%;

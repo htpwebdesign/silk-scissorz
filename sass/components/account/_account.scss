@@ -2,6 +2,13 @@
     @include padding-side;
     max-width: $width__content;
     margin: 0 auto;
+    h1 {
+        text-align: center;
+        @media screen and (min-width: $breakpoint__mobile) {
+          text-align: left;
+        }
+    
+      }
     .woocommerce {
         @media screen and (min-width: $breakpoint__mobile) {
             display: flex;
