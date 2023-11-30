@@ -1,5 +1,8 @@
 .post-type-archive-product {
   .site {
+    .widget-area{
+      display: none;
+    }
     @media screen and (min-width: $breakpoint__tablet) {
       display: grid;
       grid-template-columns: ($size__site-sidebar) auto;
@@ -10,7 +13,9 @@
       li.wc-block-product-categories-list-item:has(a[href*="services"]) {
         display: none;
       }
-      
+      .widget-area{
+        display:block;
+      }
     }
   }
 }

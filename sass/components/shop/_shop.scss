@@ -1,35 +1,39 @@
 .post-type-archive-product {
-  @include padding-side;
-
-  //sidebar
-
-  .products {
-    @include grid-layout;
+  /*site padding, select, products layout_____________*/
+  .site-main {
+    @include padding-side;
+    .woocommerce-ordering {
+      margin-bottom: 2rem;
+    }
+    .products {
+      @include grid-layout;
+    }
   }
+  /*sidebar_____________*/
 
-  .woocommerce-ordering {
-    margin-bottom: 1rem;
-  }
+  .widget-area {
+    margin-left: 3rem;
 
-  //ul(first layer)
-  .wc-block-product-categories-list--depth-0 {
-    margin: 0;
-    list-style-type: none;
-    margin-right: 2rem;
-    margin-top: 13rem;
-    padding-left: 0;
+    //ul(first layer)
+    .wc-block-product-categories-list--depth-0 {
+      margin: 0;
+      list-style-type: none;
+      margin-right: 2rem;
+      margin-top: 13rem;
+      padding-left: 0;
 
-    //li
-    .wc-block-product-categories-list-item {
-      padding: 0.5rem;
-      border-bottom: 2px solid $color__black;
+      //li
+      .wc-block-product-categories-list-item {
+        padding: 0.5rem;
+        border-bottom: 2px solid $color__black;
 
-      &:hover {
-        background-color: $color__pink;
-      }
+        &:hover {
+          background-color: $color__pink;
+        }
 
-      a {
-        text-decoration: none;
+        a {
+          text-decoration: none;
+        }
       }
     }
 
@@ -44,7 +48,7 @@
     }
   }
 
-  //product pages number
+  /*product pages number_____________*/
   .woocommerce-pagination {
     ul.page-numbers {
       list-style: none;
