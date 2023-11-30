@@ -20,6 +20,13 @@
   }
 }
 
+.single-product,
+.tax-product_cat{
+  .widget-area{
+    display: none;
+  }
+}
+
 .site-header {
   grid-area: header;
 }
