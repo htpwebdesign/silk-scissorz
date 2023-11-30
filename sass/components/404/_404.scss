@@ -1,0 +1,10 @@
+.error-404-container {
+    @include padding-side;
+    max-width: $width__content;
+    margin: 0 auto;
+
+    .error-wrapper {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
