@@ -1,12 +1,14 @@
 .home {
   .home-products {
     @include padding-side;
+    text-align: center;
 
     .all-products-link {
-      display: block;
-      width: 100%;
-      text-align: right;
-      margin: 1rem 0;
+      // display: inline-block;
+      // width: 100%;
+      // text-align: center;
+      // margin: 1rem 0;
+      @include cta-btn;
     }
 
     .products {

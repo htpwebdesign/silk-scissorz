@@ -1,0 +1,21 @@
+.page-id-28 {
+  .site-main {
+    h1 {
+      @include heading-align;
+    }
+
+    .map__section {
+      h2 {
+        margin: 1rem 0;
+        @include heading-align;
+      }
+    }
+
+    .contact__form {
+      h2 {
+        margin: 1rem 0;
+        @include heading-align;
+      }
+    }
+  }
+}

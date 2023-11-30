@@ -1,6 +1,4 @@
 .gallery-layout {
-  @include padding-side;
-
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

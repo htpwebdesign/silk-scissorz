@@ -23,7 +23,7 @@ function silk_scissorz_woocommerce_setup()
 		'woocommerce',
 		array(
 			'thumbnail_image_width' => 500,
-			'single_image_width'    => 300,
+			'single_image_width'    => 500,
 			'product_grid'          => array(
 				'default_rows'    => 3,
 				'min_rows'        => 1,
@@ -279,20 +279,28 @@ remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_pro
 // Add the sale flash to the product thumbnail
 add_action('woocommerce_product_thumbnails', 'woocommerce_show_product_loop_sale_flash', 10);
 
+// Remove the related products from the single product page
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+// Remove the related products from the single product page
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
 /**
  * Change number of upsells output
  */
-add_filter( 'woocommerce_upsell_display_args', 'wc_change_number_related_products', 20 );
+add_filter('woocommerce_upsell_display_args', 'wc_change_number_related_products', 20);
 
-function wc_change_number_related_products( $args ) {
- 
- $args['posts_per_page'] = 3;
- $args['columns'] = 3; //change number of upsells here
- return $args;
+function wc_change_number_related_products($args)
+{
+
+	$args['posts_per_page'] = 3;
+	$args['columns'] = 3; //change number of upsells here
+	return $args;
 }
 
 add_filter('woocommerce_cross_sells_total', 'change_cross_sells_total');
 
-function change_cross_sells_total($total) {
-    return 3; // Adjust the total number of cross-sells as needed
+function change_cross_sells_total($total)
+{
+	return 3; // Adjust the total number of cross-sells as needed
 }

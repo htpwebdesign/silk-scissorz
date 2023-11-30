@@ -7,7 +7,8 @@
 
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
-  width: map-get($columns, $numberColumns) - (($columns__margin * ($numberColumns - 1)) / $numberColumns);
+  width: map-get($columns, $numberColumns) -
+    (($columns__margin * ($numberColumns - 1)) / $numberColumns);
 }
 
 @mixin padding-side {
@@ -95,7 +96,7 @@
 }
 
 @mixin sale-tag {
-  background-color: #D50F7A;
+  background-color: #d50f7a;
   color: white;
   font-size: 0.75rem;
   font-family: $font__main;
@@ -107,4 +108,12 @@
   @media screen and (min-width: $breakpoint__desktop) {
     font-size: 1.25rem;
   }
+}
+
+// Heading alignment mixin responsive, mobile align center, tablet align left
+@mixin heading-align($align: center) {
+  @media screen and (min-width: $breakpoint__tablet) {
+    text-align: left;
+  }
+  text-align: $align;
 }
