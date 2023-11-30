@@ -1,3 +1,27 @@
+.post-16 {
+	@include padding-side;
+	max-width: $width__content;
+	margin: 0 auto;
+	.place-order {
+		button {
+			@include cta-btn;
+		}
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	tr {
+        &:nth-child(even) {
+          background-color: $color__purple;
+          opacity: 0.8;}
+	}
+	th, td {
+		padding: .5rem 0;
+	}
+}
+
 @media screen and (min-width: 768px) {
 
 	.col2-set {

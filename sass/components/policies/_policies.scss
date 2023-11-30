@@ -2,4 +2,6 @@
 //adding padding to the body content
 .privacy-policy .site-main{
     @include padding-side;
+    max-width: $width__content;
+    margin: 0 auto;
   }

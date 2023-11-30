@@ -1,3 +1,8 @@
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
 }
+// set max-width 1500px to look better for bigger screen
+.site-main {
+    max-width: 1500px;
+    margin: 0 auto;
+}

@@ -1,13 +1,22 @@
-.page-id-17 {
+.post-17 {
     @include padding-side;
+    max-width: $width__content;
+    margin: 0 auto;
     .woocommerce {
-        @media screen and (min-width: $breakpoint__tablet) {
+        @media screen and (min-width: $breakpoint__mobile) {
             display: flex;
+            gap: 2rem;
+        }
+    }
+    .u-columns {
+        @media screen and (min-width: $breakpoint__mobile) {
+            display: flex;
+            gap: 2rem;
         }
     }
     .woocommerce-MyAccount-navigation {
-        width: 20%;    
         ul {
+            min-width: 150px;
         @media screen and (min-width: $breakpoint__tablet) {
             margin: 0 2rem;
         }
@@ -21,12 +30,13 @@
         color: $color__darkgray;
     }
     .woocommerce-MyAccount-content {
-        margin-top: 1rem;
-        @media screen and (min-width: $breakpoint__tablet) {
-            margin: 0 1rem;
-        }
+        margin-left: 2rem;
     }
-    .woocommerce-info {
-        background-color: $color__pink;
+    .woocommerce-EditAccountForm,
+    .woocommerce-form-login,
+    .woocommerce-form-register {
+        button{
+            @include cta-btn;
+        }
     }
 }
