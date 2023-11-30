@@ -32,6 +32,7 @@ get_header();
 						<label for="category">Choose a category:</label>
 						<select name="categories" id="categories">
 							<option selected disabled><?php echo "Select an option" ?></option>
+							<option id="all-categories">All categories</option>
 							<?php
 							while (have_rows('category')) : the_row();
 								$category_name = get_sub_field('category_name') ?>

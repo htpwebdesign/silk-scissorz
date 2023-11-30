@@ -59,9 +59,13 @@
       }
     }
 
-    &:hover>a,
-    &.focus>a {
+    &:hover > a{
       color: $color__link-visited;
+    }
+
+    &.focus > a {
+      color: $color__link-visited;
+      outline: 1px dashed $color__black;
     }
   }
 
