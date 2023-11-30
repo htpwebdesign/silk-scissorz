@@ -1,11 +1,17 @@
 .post-type-archive-product {
   .site {
-    display: grid;
-    grid-template-columns: ($size__site-sidebar) auto;
-    grid-template-areas:
-      "header header"
-      "sidebar main"
-      "footer footer";
+    @media screen and (min-width: $breakpoint__tablet) {
+      display: grid;
+      grid-template-columns: ($size__site-sidebar) auto;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      li.wc-block-product-categories-list-item:has(a[href*="services"]) {
+        display: none;
+      }
+      
+    }
   }
 }
 
