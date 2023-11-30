@@ -118,6 +118,9 @@ get_header();
 							setup_postdata($post); ?>
 							<a class="gallery__item" href="<?php the_permalink() ?>">
 								<?php the_post_thumbnail('large'); ?>
+								<!-- <div class="gallery__item__overlay"> -->
+								<h3><?php the_title() ?></h3>
+								<!-- </div> -->
 							</a>
 						<?php endforeach;
 						wp_reset_postdata(); ?>
