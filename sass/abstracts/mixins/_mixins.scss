@@ -104,3 +104,11 @@
     padding: 1rem 1.25rem;
   }
 }
+
+// Heading alignment mixin responsive, mobile align center, tablet align left
+@mixin heading-align($align: center) {
+  @media screen and (min-width: $breakpoint__tablet) {
+    text-align: left;
+  }
+  text-align: $align;
+}

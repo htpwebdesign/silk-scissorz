@@ -23,7 +23,7 @@ function silk_scissorz_woocommerce_setup()
 		'woocommerce',
 		array(
 			'thumbnail_image_width' => 500,
-			'single_image_width'    => 300,
+			'single_image_width'    => 500,
 			'product_grid'          => array(
 				'default_rows'    => 3,
 				'min_rows'        => 1,
@@ -278,3 +278,6 @@ remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_pro
 
 // Add the sale flash to the product thumbnail
 add_action('woocommerce_product_thumbnails', 'woocommerce_show_product_loop_sale_flash', 10);
+
+// Remove the related products from the single product page
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);

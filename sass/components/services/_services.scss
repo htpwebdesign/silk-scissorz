@@ -1,85 +1,76 @@
 .services-container {
-    @include padding-side;
+  @include padding-side;
 
-    /* Add any other styles specific to site-main */
+  /* Add any other styles specific to site-main */
 
-    .service-links {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        border: 3px solid $color__purple;
-        margin: 0 auto;
-        width: 50%;
-        border-radius: 20px;
+  .service-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid $color__purple;
+    margin: 2rem auto;
+    width: 50%;
+    border-radius: 20px;
 
-        @media (min-width: $breakpoint__tablet) {
-            display: flex;
-            flex-direction: row;
-            gap: 2em;
-        }
-
-        a {
-            text-decoration: none;
-            margin: 0.5rem 0;
-        }
+    @media (min-width: $breakpoint__tablet) {
+      display: flex;
+      flex-direction: row;
+      gap: 2em;
     }
 
-    /* Style the service table */
-    table {
+    a {
+      text-decoration: none;
+      margin: 0.5rem 0;
+    }
+  }
 
-        border-collapse: collapse;
+  /* Style the service table */
+  table {
+    border-collapse: collapse;
 
-        /* Style the table headings */
-        th {
-            width: 50%
-        }
-
-        thead th {
-            background-color: $color__purple;
-            padding: 10px;
-            text-align: left;
-            font-weight: bold;
-        }
-
-        /* Style the table body */
-        tbody td {
-            padding: 10px;
-            border-bottom: 1px solid $color__lightgray;
-        }
-
-        /* Style alternating rows */
-        tbody tr:nth-child(even) {
-            background-color: $color__lightgray;
-        }
-
-        // Responsive Styles
-        @media (min-width: $breakpoint__tablet) {
-
-            thead th,
-            tbody td {
-                padding: 10px;
-
-            }
-        }
+    /* Style the table headings */
+    th {
+      width: 50%;
     }
 
-    .products-all {
-
-        .all-products-link {
-            display: block;
-            width: 100%;
-            text-align: right;
-            margin: 1rem 0;
-        }
-
-        .products {
-            @include grid-layout;
-
-
-
-        }
-
+    thead th {
+      background-color: $color__purple;
+      padding: 10px;
+      text-align: left;
+      font-weight: bold;
     }
 
+    /* Style the table body */
+    tbody td {
+      padding: 10px;
+      border-bottom: 1px solid $color__lightgray;
+    }
+
+    /* Style alternating rows */
+    tbody tr:nth-child(even) {
+      background-color: $color__lightgray;
+    }
+
+    // Responsive Styles
+    @media (min-width: $breakpoint__tablet) {
+      thead th,
+      tbody td {
+        padding: 10px;
+      }
+    }
+  }
+
+  .products-all {
+    .all-products-link {
+      display: block;
+      width: 100%;
+      text-align: right;
+      margin: 1rem 0;
+    }
+
+    .products {
+      @include grid-layout;
+    }
+  }
 }
