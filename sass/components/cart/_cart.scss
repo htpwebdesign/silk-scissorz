@@ -1,8 +1,9 @@
 .page-id-15 {
-  @include padding-side;
-  max-width: $width__content;
-  margin: 0 auto;
-
+  .site-main {
+    @include padding-side;
+    max-width: $width__content;
+    margin: 0 auto;
+  }
   //product-thumbnail
   .shop_table {
     width: 100%;
@@ -22,7 +23,6 @@
     }
 
     tbody {
-
       //general table
       tr {
         &:nth-child(even) {
@@ -75,6 +75,11 @@
           display: none;
         }
       }
+      #shipping_method {
+        list-style: none;
+        padding:0;
+        margin:0;
+      }
     }
 
     //coupon code area
@@ -82,17 +87,12 @@
       margin-bottom: 1rem;
     }
 
-    #shipping_method {
-      list-style: none;
-    }
-
+    
   }
 
   .checkout-button {
     @include cart-btn;
-
   }
-
 
   @media screen and (min-width: $breakpoint__tablet) {
     .shop_table {
