@@ -223,8 +223,7 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	// background-color: $woocommerce__color-success;
-	background-color: $color__pink;
+	background-color: $woocommerce__color-success;
 	margin-top: 1rem;
 	clear: both;
 }
@@ -232,13 +231,11 @@ p.no-comments {
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-	// background-color: $woocommerce__color-info;
-	background-color: rgb(211, 233, 241);
+	background-color: $woocommerce__color-info;
 }
 
 .woocommerce-error {
-	// background-color: $woocommerce__color-error;
-	background-color: #FF6347;
+	background-color: $woocommerce__color-error;
 }
 
 .demo_store {
