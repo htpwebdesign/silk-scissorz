@@ -1,8 +1,13 @@
 .page-id-15 {
-  @include padding-side;
-  max-width: $width__content;
-  margin: 0 auto;
-
+  .site-main {
+    @include padding-side;
+    max-width: $width__content;
+    margin: 0 auto;
+    //woocommerce >> cart section cart recommendation
+    .cart-collaterals {
+      margin-top: 7rem;
+    }
+  }
   //product-thumbnail
   .shop_table {
     width: 100%;
@@ -22,7 +27,6 @@
     }
 
     tbody {
-
       //general table
       tr {
         &:nth-child(even) {
@@ -75,50 +79,54 @@
           display: none;
         }
       }
+      #shipping_method {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  //coupon code area
+
+  .coupon {
+    margin-bottom: 1rem;
+  }
+}
+
+.checkout-button {
+  @include cart-btn;
+
+  &:visited {
+    color: $color__pink;
+  }
+}
+
+@media screen and (min-width: $breakpoint__tablet) {
+  .shop_table {
+    position: relative;
+    thead {
+      background-color: $color__purple;
+
+      th {
+        padding: 10px;
+        text-align: left;
+      }
     }
 
-    //coupon code area
+    //coupon area
     .coupon {
-      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 1rem;
     }
 
-    #shipping_method {
-      list-style: none;
-    }
-
-  }
-
-  .checkout-button {
-    @include cart-btn;
-
-  }
-
-
-  @media screen and (min-width: $breakpoint__tablet) {
-    .shop_table {
-      position: relative;
-      thead {
-        background-color: $color__purple;
-
-        th {
-          padding: 10px;
-          text-align: left;
-        }
-      }
-
-      //coupon area
-      .coupon {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        gap: 1rem;
-      }
-
-      .button[name="update_cart"] {
-        display: block;
-        position: absolute;
-        right: 1rem;
-      }
+    .button[name="update_cart"] {
+      display: block;
+      position: absolute;
+      right: 1rem;
+      margin-top: 2rem;
     }
   }
 }
