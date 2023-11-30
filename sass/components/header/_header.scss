@@ -58,6 +58,12 @@
             fill: $color__link-visited;
           }
         }
+        &:focus{
+          svg {
+            fill: $color__link-visited;
+          }
+          outline: 1px dashed $color__black;
+        }
       }
     }
 

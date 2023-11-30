@@ -30,6 +30,10 @@
 --------------------------------------------- */
 @import "services/services";
 
+/* Services - General
+--------------------------------------------- */
+@import "services/services-general";
+
 /* Home
 --------------------------------------------- */
 @import "home/hero";
@@ -42,7 +46,13 @@
 --------------------------------------------- */
 @import "home/service-section";
 
+/* Home Products Section
+--------------------------------------------- */
 @import "home/products-section";
+
+/* Home Gallery Section
+--------------------------------------------- */
+@import "home/gallery";
 
 /* Header
 --------------------------------------------- */
@@ -51,6 +61,10 @@
 /* Contacts
 --------------------------------------------- */
 @import "contacts/contacts";
+
+/* Contacts - General
+--------------------------------------------- */
+@import "contacts/contact-general";
 
 /* Footer
 --------------------------------------------- */
@@ -67,6 +81,11 @@
 /* About
 --------------------------------------------- */
 @import "about/about";
+
+/* About - General
+--------------------------------------------- */
+@import "about/about-general";
+
 /* Blog
 --------------------------------------------- */
 @import "blog/blog";
@@ -79,6 +98,11 @@
 /* Home - About section
 --------------------------------------------- */
 @import "home/about";
+
+/* Home - General
+--------------------------------------------- */
+@import "home/home-general";
+
 /* Shop
 --------------------------------------------- */
 @import "shop/shop";

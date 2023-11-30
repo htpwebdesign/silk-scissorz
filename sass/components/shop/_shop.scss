@@ -50,9 +50,17 @@
       list-style: none;
       padding: 0;
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       margin-bottom: 5rem;
       align-items: center;
+
+      @media screen and (min-width: $breakpoint__tablet) {
+        justify-content: flex-end;
+      }
+
+      @media screen and (min-width: $breakpoint__desktop) {
+        justify-content: flex-end;
+      }
 
       li {
         margin-right: 5px;

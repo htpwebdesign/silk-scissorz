@@ -3,46 +3,51 @@
   //adding padding to the body content
   .site-main-faq {
     @include padding-side;
-
-    //*ACCORDION AREA */
-    /* Style buttons for accordion panel */
-    .accordion {
-      background-color: $color__pink;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      text-align: left;
-      border: none;
-      outline: none;
-      transition: 0.4s;
-      &:after {
-        content: "\02965";
-        font-size: 13px;
-        color: #777;
-        float: right;
-        margin-left: 5px;
-      }
-      &:hover {
-        background-color: #ccc;
-      }
+    #category-area{
+      margin-top: 5rem;
     }
-
-    /* Style the accordion panel. (default hidden.)*/
-    .panel {
-      padding: 0 18px;
-      background-color: white;
-      display: none;
-      overflow: hidden;
-    }
-
-    /* Add background color to the button if it is clicked on & when mouse hovered */
-    .active-faq {
-      &:hover {
-        background-color: #ccc;
+    .category-content {
+      margin: 5rem 0;
+      //*ACCORDION AREA */
+      /* Style buttons for accordion panel */
+      .accordion {
+        background-color: $color__pink;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+        &:after {
+          content: "\02965";
+          font-size: 13px;
+          color: #777;
+          float: right;
+          margin-left: 5px;
+        }
+        &:hover {
+          background-color: #ccc;
+        }
       }
-      &:after {
-        content: "\2963";
+
+      /* Style the accordion panel. (default hidden.)*/
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+      }
+
+      /* Add background color to the button if it is clicked on & when mouse hovered */
+      .active-faq {
+        &:hover {
+          background-color: #ccc;
+        }
+        &:after {
+          content: "\2963";
+        }
       }
     }
   }

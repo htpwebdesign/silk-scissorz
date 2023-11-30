@@ -43,6 +43,10 @@ ul.products {
   @include grid-layout;
 
   li.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     a[title="View cart"] {
       @include cta-btn;
       display: block;
@@ -59,11 +63,8 @@ ul.products {
         padding: 1rem 1.25rem;
       }
     }
-
   }
 }
-
-
 
 // @media screen and (min-width: 48em) {
 //   ul.products {

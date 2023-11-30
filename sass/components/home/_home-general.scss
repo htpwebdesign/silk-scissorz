@@ -1,0 +1,15 @@
+.home {
+  .site-main {
+    // section has margin top and bottom 4rem but not first section
+    > section {
+      &:not(:first-of-type) {
+        margin: 5rem 0;
+      }
+
+      > h2 {
+        margin: 1rem 0;
+        @include heading-align;
+      }
+    }
+  }
+}

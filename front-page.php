@@ -111,14 +111,17 @@ get_header();
 			/* === Gallery Section === */
 			$featured_posts = get_field('gallery');
 			if ($featured_posts) : ?>
-				<section class="gallery gallery-layout">
-					<?php foreach ($featured_posts as $post) :
-						setup_postdata($post); ?>
-						<a class="gallery__item" href="<?php the_permalink() ?>">
-							<?php the_post_thumbnail('large'); ?>
-						</a>
-					<?php endforeach;
-					wp_reset_postdata(); ?>
+				<section class="gallery-section">
+					<h2>Blogs</h2>
+					<div class="gallery-layout">
+						<?php foreach ($featured_posts as $post) :
+							setup_postdata($post); ?>
+							<a class="gallery__item" href="<?php the_permalink() ?>">
+								<?php the_post_thumbnail('large'); ?>
+							</a>
+						<?php endforeach;
+						wp_reset_postdata(); ?>
+					</div>
 				</section>
 
 			<?php endif;
@@ -162,11 +165,12 @@ get_header();
 
 
 			<section class="home-products">
-				<a class="all-products-link" href="<?php echo wc_get_page_permalink('shop') ?>">See All Products</a>
+				<h2>Sale Products</h2>
 				<?php
 				/* === Products Section === */
 				echo do_shortcode('[products limit="3" columns="3" orderby="popularity" class="quick-sale" on_sale="true" ]');
 				?>
+				<a class="all-products-link" href="<?php echo wc_get_page_permalink('shop') ?>">See All Products</a>
 			</section>
 			<?php
 

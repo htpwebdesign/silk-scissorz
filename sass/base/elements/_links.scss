@@ -12,11 +12,11 @@ a {
 	}
 
 	&:focus {
-		outline: none;
+		outline: 1px dashed $color__black;
 	}
 
 	&:hover,
 	&:active {
-		outline: 0;
+		outline: none;
 	}
 }

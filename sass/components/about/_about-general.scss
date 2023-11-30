@@ -1,0 +1,16 @@
+.page-id-26 {
+  .site-main {
+    h1 {
+      @include heading-align;
+    }
+    > section {
+      &:not(:first-of-type) {
+        margin: 5rem 0;
+      }
+      > h2 {
+        margin: 1rem 0;
+        @include heading-align;
+      }
+    }
+  }
+}
