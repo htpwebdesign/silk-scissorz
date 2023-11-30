@@ -31,35 +31,39 @@
 
     table {
       text-align: center;
-      thead tr {
-        display: none;
-
-        @media screen and (min-width: $breakpoint__desktop) {
-          display: table-row;
-        }
+      grid-column: 1 / -1;
+      @media screen and (min-width: $breakpoint__tablet) {
+        grid-column: 3 / 4;
       }
-      tbody tr {
-        @media screen and (min-width: $breakpoint__mobile) {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 0.5rem;
-        }
+      // thead tr {
+      //   display: none;
 
-        @media screen and (min-width: $breakpoint__tablet) {
-          display: table-row;
-        }
+      //   @media screen and (min-width: $breakpoint__desktop) {
+      //     display: table-row;
+      //   }
+      // // }
+      // tbody tr {
+      //   @media screen and (min-width: $breakpoint__mobile) {
+      //     display: flex;
+      //     flex-wrap: wrap;
+      //     justify-content: center;
+      //     gap: 0.5rem;
+      //   }
 
-        td:first-child {
-          font-weight: bold;
-          @media screen and (min-width: $breakpoint__mobile) {
-            flex: 1 1 100%;
-          }
-          //   @media screen and (min-width: $breakpoint__tablet) {
-          //     flex: 1 1 25%;
-          //   }
-        }
-      }
+      //   @media screen and (min-width: $breakpoint__tablet) {
+      //     display: table-row;
+      //   }
+
+      //   td:first-child {
+      //     font-weight: bold;
+      //     @media screen and (min-width: $breakpoint__mobile) {
+      //       flex: 1 1 100%;
+      //     }
+      //     //   @media screen and (min-width: $breakpoint__tablet) {
+      //     //     flex: 1 1 25%;
+      //     //   }
+      //   }
+      // }
     }
 
     .footer-navigation {
