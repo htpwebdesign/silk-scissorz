@@ -1,5 +1,24 @@
 .home {
   .gallery-section {
     @include padding-side;
+
+    .gallery-layout {
+      .gallery__item {
+        position: relative;
+      }
+
+      h3 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0.5rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: $color__white;
+        font-size: $font__size-base;
+        font-family: $font__main;
+        margin: 0;
+      }
+    }
   }
 }
