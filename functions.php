@@ -255,17 +255,10 @@ function new_loop_shop_per_page($cols)
 	// Return the number of products you wanna show per page.
 	$cols = 6;
 	return $cols;
-function new_loop_shop_per_page($cols)
-{
-	// $cols contains the current number of products per page based on the value stored on Options –> Reading
-	// Return the number of products you wanna show per page.
-	$cols = 6;
-	return $cols;
 }
 /**
  * Change number of products that are displayed per page (shop page)
  */
-add_filter('loop_shop_per_page', 'new_loop_shop_per_page');
 add_filter('loop_shop_per_page', 'new_loop_shop_per_page');
 
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widget');
@@ -273,19 +266,13 @@ function my_custom_dashboard_widget()
 {
 	global $wp_meta_boxes;
 	wp_add_dashboard_widget('custom_video_widget', 'Video Tutorial', 'custom_dashboard_fun');
-function my_custom_dashboard_widget()
-{
-	global $wp_meta_boxes;
-	wp_add_dashboard_widget('custom_video_widget', 'Video Tutorial', 'custom_dashboard_fun');
 }
 
-function custom_dashboard_fun()
-{
 function custom_dashboard_fun()
 {
 	echo '<a href="https://gearoid.me/pokemon/" target="_blank">See the tutorial</a>';
 }
-}
+
 
 function wporg_remove_all_dashboard_metaboxes()
 {
@@ -299,27 +286,7 @@ function wporg_remove_all_dashboard_metaboxes()
 	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
 }
 add_action('wp_dashboard_setup', 'wporg_remove_all_dashboard_metaboxes');
-function wporg_remove_all_dashboard_metaboxes()
-{
-	// Remove the rest of the dashboard widgets
-	remove_meta_box('dashboard_primary', 'dashboard', 'side');
-	remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
-	remove_meta_box('health_check_status', 'dashboard', 'normal');
-	remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
-	remove_meta_box('dashboard_activity', 'dashboard', 'normal');
-	remove_meta_box('woocommerce_dashboard_status', 'dashboard', 'normal');
-	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
-}
-add_action('wp_dashboard_setup', 'wporg_remove_all_dashboard_metaboxes');
 
-function my_login_logo()
-{ ?>
-	<style type="text/css">
-		#login h1 a,
-		.login h1 a {
-			background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/sas-favicon-purple.png);
-			height: 140px;
-			width: 140px;
 function my_login_logo()
 { ?>
 	<style type="text/css">
@@ -335,11 +302,20 @@ function my_login_logo()
 	</style>
 <?php }
 add_action('login_enqueue_scripts', 'my_login_logo');
-			padding-bottom: 30px;
-		}
-	</style>
-<?php }
-add_action('login_enqueue_scripts', 'my_login_logo');
+
+//logo url sends users to
+function my_login_logo_url()
+{
+	return home_url();
+}
+add_filter('login_headerurl', 'my_login_logo_url');
+
+// calling style-login.css
+function my_login_stylesheet()
+{
+	wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/style-login.css');
+}
+add_action('login_enqueue_scripts', 'my_login_stylesheet');
 
 // Remove admin menu links for non-Administrator accounts
 function fwd_remove_admin_links()
