@@ -249,58 +249,154 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 
-function new_loop_shop_per_page( $cols ) {
-  // $cols contains the current number of products per page based on the value stored on Options –> Reading
-  // Return the number of products you wanna show per page.
-  $cols = 6;
-  return $cols;
+function new_loop_shop_per_page($cols)
+{
+	// $cols contains the current number of products per page based on the value stored on Options –> Reading
+	// Return the number of products you wanna show per page.
+	$cols = 6;
+	return $cols;
 }
 /**
  * Change number of products that are displayed per page (shop page)
  */
-add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page');
+add_filter('loop_shop_per_page', 'new_loop_shop_per_page');
 
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widget');
-function my_custom_dashboard_widget() {
-global $wp_meta_boxes;
-wp_add_dashboard_widget('custom_video_widget', 'Video Tutorial', 'custom_dashboard_fun');
+function my_custom_dashboard_widget()
+{
+	global $wp_meta_boxes;
+	wp_add_dashboard_widget('custom_video_widget', 'Video Tutorial', 'custom_dashboard_fun');
 }
 
-function custom_dashboard_fun() {
+function custom_dashboard_fun()
+{
 	echo '<a href="https://gearoid.me/pokemon/" target="_blank">See the tutorial</a>';
-	}
+}
 
-	function wporg_remove_all_dashboard_metaboxes() {
-		// Remove the rest of the dashboard widgets
-		remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
-		remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
-		remove_meta_box( 'health_check_status', 'dashboard', 'normal' );
-		remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
-		remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
-		remove_meta_box('woocommerce_dashboard_status', 'dashboard', 'normal');
-    	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
-	}
-	add_action( 'wp_dashboard_setup', 'wporg_remove_all_dashboard_metaboxes' );
+function wporg_remove_all_dashboard_metaboxes()
+{
+	// Remove the rest of the dashboard widgets
+	remove_meta_box('dashboard_primary', 'dashboard', 'side');
+	remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+	remove_meta_box('health_check_status', 'dashboard', 'normal');
+	remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+	remove_meta_box('dashboard_activity', 'dashboard', 'normal');
+	remove_meta_box('woocommerce_dashboard_status', 'dashboard', 'normal');
+	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+}
+add_action('wp_dashboard_setup', 'wporg_remove_all_dashboard_metaboxes');
 
-	function my_login_logo() { ?>
-		<style type="text/css">
-			#login h1 a, .login h1 a {
-				background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/sas-favicon-purple.png);
-			height:140px;
-			width:140px;
+function my_login_logo()
+{ ?>
+	<style type="text/css">
+		#login h1 a,
+		.login h1 a {
+			background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/sas-favicon-purple.png);
+			height: 140px;
+			width: 140px;
 			background-size: 140px 140px;
 			background-repeat: no-repeat;
-				padding-bottom: 30px;
-			}
-		</style>
-	<?php }
-	add_action( 'login_enqueue_scripts', 'my_login_logo' );
-
-	// Remove admin menu links for non-Administrator accounts
-	function fwd_remove_admin_links() {
-		if ( !current_user_can( 'manage_options' ) ) {
-			remove_menu_page( 'edit.php' );           // Remove Posts link
-				remove_menu_page( 'edit-comments.php' );  // Remove Comments link
+			padding-bottom: 30px;
 		}
+	</style>
+<?php }
+add_action('login_enqueue_scripts', 'my_login_logo');
+
+// Remove admin menu links for non-Administrator accounts
+function fwd_remove_admin_links()
+{
+	if (!current_user_can('manage_options')) {
+		remove_menu_page('edit.php');           // Remove Posts link
+		remove_menu_page('edit-comments.php');  // Remove Comments link
 	}
-	add_action( 'admin_menu', 'fwd_remove_admin_links' );
+}
+add_action('admin_menu', 'fwd_remove_admin_links');
+
+// Create Block Template 
+function silk_block_editor_template()
+{
+	// Booking Page
+	if (isset($_GET['post']) && '141' == $_GET['post']) {
+		$post_type_object = get_post_type_object('page');
+		$post_type_object->template = array(
+			// define blocks here...
+			array(
+				'core/paragraph',
+				array(
+					'placeholder' => 'Add your introduction here...'
+				)
+			),
+		);
+		$post_type_object->template_lock = 'all';
+	}
+	// Cart Page
+	if (isset($_GET['post']) && '15' == $_GET['post']) {
+		$post_type_object = get_post_type_object('page');
+		$post_type_object->template = array(
+			// define blocks here...
+			array(
+				'core/shortcode',
+				array(
+					'placeholder' => 'Add your shortcode here...'
+				)
+			),
+		);
+		$post_type_object->template_lock = 'all';
+	}
+	// Checkout Page
+	if (isset($_GET['post']) && '16' == $_GET['post']) {
+		$post_type_object = get_post_type_object('page');
+		$post_type_object->template = array(
+			// define blocks here...
+			array(
+				'core/shortcode',
+				array(
+					'placeholder' => 'Add your shortcode here...'
+				)
+			),
+		);
+		$post_type_object->template_lock = 'all';
+	}
+	// My Account Page
+	if (isset($_GET['post']) && '17' == $_GET['post']) {
+		$post_type_object = get_post_type_object('page');
+		$post_type_object->template = array(
+			// define blocks here...
+			array(
+				'core/shortcode',
+				array(
+					'placeholder' => 'Add your shortcode here...'
+				)
+			),
+		);
+		$post_type_object->template_lock = 'all';
+	}
+	// Services Page
+	if (isset($_GET['post']) && '24' == $_GET['post']) {
+		$post_type_object = get_post_type_object('page');
+		$post_type_object->template = array(
+			// define blocks here...
+			array(
+				'core/paragraph',
+				array(
+					'placeholder' => 'Add your introduction here...'
+				)
+			),
+		);
+		$post_type_object->template_lock = 'all';
+	}
+}
+
+add_action('init', 'silk_block_editor_template');
+
+// Change the Block Editor to Classic Editor
+function silk_post_filter($use_block_editor, $post)
+{
+	$page_ids = array(26, 30, 22);
+	if (in_array($post->ID, $page_ids)) {
+		return false;
+	} else {
+		return $use_block_editor;
+	}
+}
+add_filter('use_block_editor_for_post', 'silk_post_filter', 10, 2);
