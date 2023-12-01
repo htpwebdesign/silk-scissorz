@@ -265,12 +265,12 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widget');
 function my_custom_dashboard_widget()
 {
 	global $wp_meta_boxes;
-	wp_add_dashboard_widget('custom_video_widget', 'Video Tutorial', 'custom_dashboard_fun');
+	wp_add_dashboard_widget('custom_video_widget', 'Video Tutorial', 'tutorial_link');
 }
 
-function custom_dashboard_fun()
+function tutorial_link()
 {
-	echo '<a href="https://gearoid.me/pokemon/" target="_blank">See the tutorial</a>';
+	echo '<a href="https://www.youtube.com/playlist?list=PLuZq730zMRDbs4a51VRjFqgTci6hnPHMh" target="_blank">See the tutorial</a>';
 }
 
 
