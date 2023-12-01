@@ -1,12 +1,7 @@
-@import 'swiper-vars.scss';
+@import "swiper-vars.scss";
 @at-root {
   :root {
     --swiper-navigation-size: 44px;
-    /*
-  --swiper-navigation-top-offset: 50%;
-  --swiper-navigation-sides-offset: 10px;
-  --swiper-navigation-color: var(--swiper-theme-color);
-  */
   }
 }
 .swiper-button-prev-h,
@@ -73,13 +68,13 @@
 .swiper-button-prev-h,
 .swiper-rtl .swiper-button-next-h {
   &:after {
-    content: 'prev';
+    content: "prev";
   }
 }
 .swiper-button-next-h,
 .swiper-rtl .swiper-button-prev-h {
   &:after {
-    content: 'next';
+    content: "next";
   }
   right: var(--swiper-navigation-sides-offset, 10px);
   left: auto;

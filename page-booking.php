@@ -45,7 +45,6 @@ get_header();
 					<article>
 						<?php echo $bookable_product->get_image("woocommerce_single"); ?>
 						<h2><?php echo esc_html($bookable_product->get_name()); ?></h2>
-						<!-- <p><?php echo esc_html($bookable_product->get_short_description()); ?></p> -->
 						<a href="<?php echo esc_url($bookable_product->get_permalink()); ?>">Book Now</a>
 					</article>
 				<?php
@@ -63,5 +62,4 @@ get_header();
 </main><!-- #main -->
 
 <?php
-// get_sidebar();
 get_footer();

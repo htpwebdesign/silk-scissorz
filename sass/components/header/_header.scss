@@ -24,7 +24,6 @@
     img {
       width: 100%;
       max-width: 80px;
-      // min-width: 100px;
       height: 80px;
       display: block;
 
@@ -58,7 +57,7 @@
             fill: $color__link-visited;
           }
         }
-        &:focus{
+        &:focus {
           svg {
             fill: $color__link-visited;
           }
@@ -75,8 +74,5 @@
         fill: $color__link-visited;
       }
     }
-    // .secondary-navigation__item {
-    //   margin-left: 1rem;
-    // }
   }
 }

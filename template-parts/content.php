@@ -11,30 +11,29 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header">
-        <?php
+	<header class="entry-header">
+		<?php
 		if (is_singular()) :
 			the_title('<h1 class="entry-title">', '</h1>');
 		else :
 			the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
 		endif;
 		?>
-    </header><!-- .entry-header -->
+	</header><!-- .entry-header -->
 
-    <?php silk_scissorz_post_thumbnail();
+	<?php silk_scissorz_post_thumbnail();
 	if ('post' === get_post_type()) :
 	?>
-    <div class="entry-meta">
-        <?php
+		<div class="entry-meta">
+			<?php
 			silk_scissorz_posted_on();
 			silk_scissorz_entry_footer();
-			// silk_scissorz_posted_by();
 			?>
-    </div><!-- .entry-meta -->
-    <?php endif; ?>
+		</div><!-- .entry-meta -->
+	<?php endif; ?>
 
-    <div class="entry-content">
-        <?php
+	<div class="entry-content">
+		<?php
 		if (is_single()) :
 			the_content();
 		else :
@@ -49,48 +48,37 @@
 				if (get_field('cta') && get_field('cta_link')) :
 					$cta = get_field('cta');
 					$cta_link = get_field('cta_link');
-				?>
-        <section class="cta">
-            <a href="<?php echo esc_url($cta_link); ?>"><?php echo $cta; ?></a>
-        </section>
-        <?php
+		?>
+					<section class="cta">
+						<a href="<?php echo esc_url($cta_link); ?>"><?php echo $cta; ?></a>
+					</section>
+				<?php
 				endif;
 
 				$featured_posts = get_field('single_post_products_section');
 				if ($featured_posts) :
-		?>
+				?>
 
-        <section class="related-products">
-            <h2 class="related-products-heading">Related Products</h2>
-            <div class="related-products-wrapper">
-                <?php
+					<section class="related-products">
+						<h2 class="related-products-heading">Related Products</h2>
+						<div class="related-products-wrapper">
+							<?php
 							foreach ($featured_posts as $post) :
 								setup_postdata($post);
 							?>
-                <article class="related-product">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail('medium'); ?>
-                        <h3><?php the_title(); ?></h3>
-                        <!-- <?php
-												if (function_exists('wc_get_product')) :
-													$product = wc_get_product(get_the_ID());
-												?>
-
-										<span class="price"><?php echo $product->get_price_html(); ?></span>
-										<a href="<?php echo esc_url($product->get_permalink()) ?>">Read More</a>
-
-									<?php
-												endif;
-									?> -->
-                    </a>
-                </article>
-                <?php
+								<article class="related-product">
+									<a href="<?php the_permalink(); ?>">
+										<?php the_post_thumbnail('medium'); ?>
+										<h3><?php the_title(); ?></h3>
+									</a>
+								</article>
+							<?php
 							endforeach;
 							wp_reset_postdata();
 							?>
-            </div>
-        </section>
-        <?php
+						</div>
+					</section>
+		<?php
 				endif;
 			endif;
 		endif;
@@ -104,10 +92,10 @@
 			)
 		);
 		?>
-    </div><!-- .entry-content -->
-    <!-- 
+	</div><!-- .entry-content -->
+	<!-- 
 	<footer class="entry-footer">
 		<?php silk_scissorz_entry_footer(); ?>
 	</footer> -->
-    <!-- .entry-footer -->
+	<!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

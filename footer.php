@@ -99,7 +99,6 @@
                                     $day_of_week = get_sub_field('day_of_week');
                                     $open_time = get_sub_field('opening_hour');
                                     $close_time = get_sub_field('closing_hour');
-                                    // if $open_time and $close_time are empty, first td print day, second prints closed, only two tds
                                     if (empty($open_time) && empty($close_time)) :
                                 ?>
                                         <tr>

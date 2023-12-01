@@ -1,6 +1,5 @@
 .main-navigation {
   display: block;
-  // width: 100%;
 
   ul {
     display: none;
@@ -74,8 +73,6 @@
     width: 100%;
     text-decoration: none;
     color: $color__text-main;
-    // font-weight: 700;
-    // padding: 1em 1em 1em 1em;
     padding: 0.5em;
     transition: color 0.2s ease-in-out;
   }

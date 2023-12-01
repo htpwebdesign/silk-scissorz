@@ -67,25 +67,25 @@ get_header();
 								endif;
 								?>
 								<div class="stylist-text">
-								<h3>
-									<?php the_title(); ?>
+									<h3>
+										<?php the_title(); ?>
+										<?php
+										if (get_field('stylist_slogan')) :
+											$stylist_slogan = get_field('stylist_slogan');
+										?>
+											<span> - <?php echo esc_html($stylist_slogan); ?></span>
+										<?php
+										endif;
+										?>
+									</h3>
 									<?php
-									if (get_field('stylist_slogan')) :
-										$stylist_slogan = get_field('stylist_slogan');
+									if (get_field('stylist_bio')) :
+										$stylist_bio = get_field('stylist_bio');
 									?>
-										<span> - <?php echo esc_html($stylist_slogan); ?></span>
+										<p><?php echo esc_html($stylist_bio); ?></p>
 									<?php
 									endif;
 									?>
-								</h3>
-								<?php
-								if (get_field('stylist_bio')) :
-									$stylist_bio = get_field('stylist_bio');
-								?>
-									<p><?php echo esc_html($stylist_bio); ?></p>
-								<?php
-								endif;
-								?>
 								</div>
 							</article>
 					<?php
@@ -95,7 +95,7 @@ get_header();
 					?>
 				</div>
 				<div class="stylist-cta">
-				<a href="<?php echo esc_url(get_page_link(141)) ?>">Book Now</a>
+					<a href="<?php echo esc_url(get_page_link(141)) ?>">Book Now</a>
 				</div>
 			</section>
 	<?php
@@ -108,5 +108,4 @@ get_header();
 </main><!-- #main -->
 
 <?php
-// get_sidebar();
 get_footer();
