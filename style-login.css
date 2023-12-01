@@ -1,0 +1,15 @@
+.login {
+  background-color: #912269;
+}
+
+.login #backtoblog a, .login #nav a {
+    color:white;
+}
+
+a{
+    color:white;
+}
+
+.language-switcher label .dashicons{
+    color:white;
+}
